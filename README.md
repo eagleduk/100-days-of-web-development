@@ -4,4 +4,8 @@ Udemy
 
 ## 2 Days
 - section2
-  - 03. getting-started-with-css (CSS 시작하기)
+  - 03. CSS 시작하기
+
+## 3 Days
+- section2
+  - 04. 색상작업
