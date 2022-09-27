@@ -6,8 +6,8 @@ Udemy
 
 ## 2 Days
 
-- section2
-  - 20. CSS 시작하기
+- section2  
+  20. CSS 시작하기
 
 ## 3 Days
 
@@ -25,3 +25,8 @@ Udemy
   38. ID 선택자로 단일 요소 선택  
   39. font-size & px 작업하기  
   40. 구글 글꼴의 다른 글꼴 사용하기
+
+## 5 Days
+
+- section2  
+  42. 이미지 추가하기
