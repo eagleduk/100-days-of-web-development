@@ -45,3 +45,5 @@ Udemy
 > > - combinators
 > >   - Desendant: 모든 자손의 스타일 지정
 > >   - Child: 자식에게만 스타일 지정
+>
+> ##### 062. 선택자 & 결합자 사용
