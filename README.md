@@ -32,3 +32,16 @@ Udemy
 > ##### 059. CSS 박스 모델 사용
 >
 > ##### 060. HTML 레이아웃 만들기
+>
+> ##### 061. 이론: 선택자 & 결합자
+>
+> > - selector
+> >
+> >   - Type: elementname
+> >   - ID: #id
+> >   - Group: elementname, elementname
+> >   - Class: .class
+> >
+> > - combinators
+> >   - Desendant: 모든 자손의 스타일 지정
+> >   - Child: 자식에게만 스타일 지정
