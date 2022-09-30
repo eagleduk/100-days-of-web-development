@@ -70,3 +70,5 @@ Udemy
 > > - block <-> block 간 margin 속성은 더 큰 값을 가진 margin 으로 적용된다.
 > > - block <-> inline 간 margin 속성은 inline 요소에서 상하 margin 이 적용되지 않으므로 block 요소의 margin 이 적용된다.
 > > - block <-> inline-block 간 margin 속성은 두 요소에서 정의된 margin 이 모두 적용된다.
+>
+> ##### 067. "box-shadow" 속성
