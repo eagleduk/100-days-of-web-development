@@ -63,3 +63,10 @@ Udemy
 >
 > > - inline: 상하 여백(maring)은 적용되지 않고, 좌우 여백(margin)만 적용 된다. padding 값을 적용시, 다른 html 태그와의 거리가 자동으로 조절되지 않는다.
 > > - inline-block: inline 과 비슷하게 동작하나, padding 값을 적용시, block 요소와 동일하가 다른 html 태그와의 거리가 조절된다.
+>
+> ##### 066. 마진 상쇄 이해하기
+>
+> > - 여백 겹침 현상: 인접 요소간에 발생, 수직 여백에서만 발생.
+> > - block <-> block 간 margin 속성은 더 큰 값을 가진 margin 으로 적용된다.
+> > - block <-> inline 간 margin 속성은 inline 요소에서 상하 margin 이 적용되지 않으므로 block 요소의 margin 이 적용된다.
+> > - block <-> inline-block 간 margin 속성은 두 요소에서 정의된 margin 이 모두 적용된다.
