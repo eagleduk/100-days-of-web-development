@@ -17,20 +17,18 @@ img {
 }
 
 h1 {
-  color: rgb(31, 25, 25);
-  font-size: 30px;
-}
-
-span {
-  color: rgb(66, 2, 2);
+  font-family: "Oswald", sans-serif;
+  color: rgb(83, 75, 75);
+  font-size: 22px;
+  margin-top: 120px;
+  margin-bottom: 40px;
 }
 
 #todays-challenge {
-  color: rgb(75, 59, 59);
+  color: rgb(170, 96, 83);
   font-weight: bold;
-  font-size: 52px;
-}
-
-a {
-  color: rgb(73, 29, 50);
+  font-size: 32px;
+  margin-top: 0;
+  margin-bottom: 60px;
+  display: inline-block;
 }
