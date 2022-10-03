@@ -1,6 +1,6 @@
 body {
   font-family: "Roboto", sans-serif;
-  background-color: thistle;
+  background-color: rgb(244, 234, 255);
 }
 
 a {
@@ -12,7 +12,8 @@ header {
 }
 
 header h1 {
-  font-size: 38px;
+  font-size: 52px;
+  color: rgb(88, 49, 169);
   font-weight: 900;
   margin-top: 10px;
 }
