@@ -66,20 +66,22 @@ a:active {
 
 footer {
   text-align: center;
-  margin-top: 25px;
+  margin-bottom: 100px;
 }
 
 footer a {
-  background-color: yellow;
-  padding: 10px 15px;
-  border-radius: 5px;
-  font-size: 14px;
-  font-weight: 900;
+  background-color: rgb(250, 201, 39);
+  color: rgb(66, 51, 4);
+  padding: 12px 20px;
+  border-radius: 8px;
+}
+
+footer a:hover,
+footer a:active {
+  background-color: rgb(255, 186, 58);
 }
 
 footer p {
-  margin-top: 25px;
-  font-size: 12px;
-  font-weight: 900;
-  color: slategrey;
+  color: rgb(131, 113, 149);
+  margin-top: 30px;
 }
