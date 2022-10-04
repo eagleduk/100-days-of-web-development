@@ -22,13 +22,11 @@ header img {
 }
 
 main {
-  width: 550px;
-  background-color: blueviolet;
-  margin: 0 auto;
-  color: white;
-  font-size: 12px;
-  padding: 35px 20px 20px 20px;
-  margin-top: 60px;
+  width: 700px;
+  background-color: rgb(122, 74, 218);
+  margin: 32px auto;
+  color: rgb(248, 241, 255);
+  padding: 32px;
   border-radius: 8px;
 }
 
