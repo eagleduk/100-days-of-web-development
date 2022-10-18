@@ -76,3 +76,9 @@ Udemy
 > 157. 유니코드 UTF-8 작업하기
 >      > - https://en.wikipedia.org/wiki/Arrows_(Unicode_block)
 > 158. 마무리 작업
+> 159. 모듈 요약
+> 160. '위치', 플렉스박스 & 그리드에 대해 자세히 알아보기
+>      > - 위치 속성에 대한 추가 정보 => https://academind.com/tutorials/the-position-property/
+>      > - 플렉스박스 - 플렉스 컨테이너 => https://academind.com/tutorials/flexbox-basics-container/
+>      > - 플렉스박스 - 플렉스 아이템 => https://academind.com/tutorials/flexbox-flex-items/
+>      > - 플렉스박스와 그리드 비교 => https://academind.com/tutorials/css-grid-vs-flexbox/
