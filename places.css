@@ -1,5 +1,6 @@
 body {
   background: linear-gradient(30deg, rgb(77, 77, 77), rgb(58, 58, 58));
+  color: rgb(68, 68, 68);
 }
 
 header {
@@ -38,13 +39,11 @@ main li img {
 
 .actions a {
   text-decoration: none;
-  border-radius: 4px;
-  padding: 6px 12px;
-  color: rgb(150, 212, 222);
-  background-color: transparent;
+  border-radius: 5px;
+  padding: 6px;
+  color: rgb(22, 211, 228);
 }
 
 .actions a:hover {
-  background-color: rgb(150, 212, 222);
-  color: white;
+  background-color: rgb(235, 253, 255);
 }
