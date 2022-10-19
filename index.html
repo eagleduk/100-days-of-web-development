@@ -5,22 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>WebFood</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <header>
-        <a href="/">
-            <img src="" alt="logo" />
+    <header id="main-header">
+        <a href="/" id="logo">
+            WebFood
         </a>
         <nav>
             <ul>
                 <li>
-                    Browse Meals
+                    <a href="#">
+                        Browse Meals
+                    </a>
                 </li>
                 <li>
-                    My Orders
+                    <a href="#">
+                        My Orders
+                    </a>
                 </li>
             </ul>
         </nav>
@@ -29,29 +33,33 @@
         <h1>
             Browse Our Delicious Meals
         </h1>
-        <section>
+        <section id="latest-products">
             <ul>
-                <li>
-                    <img src="" alt="Risotto" />
-                    <div>
-                        <h2>
-                            Risotto with Tiger Prawns
-                        </h2>
-                        <a href="">
-                            Add to Cart
-                        </a>
-                    </div>
+                <li class="food-items">
+                    <article>
+                        <img src="/images/risotto.jpg" alt="Delicious risotto with tiger prawns" />
+                        <div class="food-item=content">
+                            <h2>
+                                Risotto with Tiger Prawns
+                            </h2>
+                            <a href="" class="btn">
+                                Add to Cart
+                            </a>
+                        </div>
+                    </article>
                 </li>
-                <li>
-                    <img src="" alt="Cheeseburgers" />
-                    <div>
-                        <h2>
-                            Cheeseburgers
-                        </h2>
-                        <a href="">
-                            Add to Cart
-                        </a>
-                    </div>
+                <li class="food-items">
+                    <article>
+                        <img src="/images/cheeseburgers.jpg" alt="Classic cheeseburgers with fries" />
+                        <div class="food-item=content">
+                            <h2>
+                                Cheeseburgers
+                            </h2>
+                            <a href="">
+                                Add to Cart
+                            </a>
+                        </div>
+                    </article>
                 </li>
             </ul>
         </section>
