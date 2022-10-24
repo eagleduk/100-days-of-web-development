@@ -87,3 +87,7 @@ Udemy
      > - `:target` : ID 가 URL에 추가되었는지 확인해주는 선택자.
 
 183. 사이드바 마무리 하기
+184. 'z-index' 속성 소개
+
+     > - `z-index` 는 위치 지정 요소(`position 속성이 static 값과 다른 값으로 적용된 요소`)의 z-order 를 정의
+     > - position: static(`기본값`) 시에는 <strong>z-index 가 적용되지 않는다.</strong>
