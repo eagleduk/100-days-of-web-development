@@ -33,3 +33,9 @@ Udemy
      > - `html`,`:root` : 최상위 요소에서 <strong>상속</strong>
      > - `html` 보다 `:root` 선택자가 우선순위가 높다.
      > - `*` : 모든 요소에 바로 <strong>적용</strong>
+
+195. CSS 변환 이해하기
+     > - 변환(transformation) : 요소의 모양을 이동하거나 변경 e.g hover
+196. CSS 전환 추가
+
+     > - 전환(transition) : 요소의 초기상태에서 부드럽게 변환(transform) 할 수 있도록 해준다.
