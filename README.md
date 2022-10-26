@@ -39,3 +39,10 @@ Udemy
 196. CSS 전환 추가
 
      > - 전환(transition) : 요소의 초기상태에서 부드럽게 변환(transform) 할 수 있도록 해준다.
+
+197. SVG 작업
+
+     > - <strong>S</strong>calable <strong>V</strong>ector <strong>G</strong>raphics
+     > - 2차원 벡터 그래픽을 표현하기 위한 XML 기반의 마크업 언어
+     > - 브라우저가 랜더링 할 수 있는 확장형 이미지의 텍스트 기반 묘사
+     > - [heroicons.dev](https://heroicons.dev/) / [heroicons.com](https://heroicons.com/)
