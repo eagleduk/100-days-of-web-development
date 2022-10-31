@@ -1,5 +1,6 @@
 body {
   background-color: rgb(30, 30, 30);
+  font-family: "Roboto", sans-serif;
 }
 
 form {
@@ -10,13 +11,40 @@ form {
   padding: 1rem;
 }
 
+label {
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
 input {
   width: 100%;
   display: block;
   margin-bottom: 1rem;
   box-sizing: border-box;
+  font: inherit;
+  border: 1px solid rgb(110, 101, 101);
+  padding: 0.25rem;
+  color: rgb(180, 81, 81);
+}
+
+input:focus {
+  background-color: rgb(17, 97, 77);
+  color: rgb(222, 219, 224);
+  border: 1px solid rgb(40, 17, 168);
 }
 
 button {
   display: block;
+  font: inherit;
+  background-color: rgb(31, 11, 148);
+  border: 1px solid rgb(31, 11, 148);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(3, 78, 107);
+  border-color: rgb(3, 78, 107);
 }
