@@ -16,7 +16,9 @@ label {
   display: block;
 }
 
-input {
+input,
+textarea,
+select {
   width: 100%;
   display: block;
   margin-bottom: 1rem;
@@ -27,7 +29,8 @@ input {
   color: rgb(180, 81, 81);
 }
 
-input:focus {
+input:focus,
+textarea:focus {
   background-color: rgb(17, 97, 77);
   color: rgb(222, 219, 224);
   border: 1px solid rgb(40, 17, 168);
