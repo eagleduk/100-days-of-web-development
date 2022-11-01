@@ -35,3 +35,5 @@ Udemy
 215. 속성 검증하기
      > - `form` 태그에서 **novalidate(default: false)** 속성을 추가하는 것으로 양식이 전달될 때 검증을 피할 수 있다.
      > - `input[type=date]` 속성에서 **min,max** 값으로 날짜 선택을 제한할 수 있다.
+216. 추가 입력 & 양식 속성
+     > - `textarea` resize 스타일에서 resize 여부 및 방향을 제한 할 수 있다.
