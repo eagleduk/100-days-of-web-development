@@ -12,73 +12,71 @@
 </head>
 
 <body>
-    <h1>Contact Us</h1>
-    <form action="">
-        <section>
-            <h2>How can we help you?</h2>
-            <ul>
-                <li>
-                    <label for="name">Your Name</label>
-                    <input type="text" name="name" id="name" required>
-                </li>
-                <li>
-                    <label for="email">Your E-Mail Address</label>
-                    <input type="email" name="email" id="email" required>
-                </li>
-                <li>
-                    <label for="phone">Your Phone Number</label>
-                    <input type="number" name="phone" id="phone" required>
-                </li>
-                <li>
-                    <label for="message">Your Message</label>
-                    <textarea name="message" id="message" cols="30" rows="5"></textarea>
-                </li>
-                <li>
-                    <label for="find">How did you find us?</label>
-                    <select name="find" id="find">
-                        <option value="web">Web Search</option>
-                        <option value="ad">AD.</option>
-                    </select>
-                </li>
-            </ul>
-        </section>
+    <header>
+        <h1>Contact Us</h1>
+    </header>
+    <main>
+        <form action="">
+            <section>
+                <h2>How can we help you?</h2>
+                <ul>
+                    <li>
+                        <label for="name">Your Name</label>
+                        <input type="text" name="name" id="name" required />
+                    </li>
+                    <li>
+                        <label for="email">Your E-Mail Address</label>
+                        <input type="email" name="email" id="email" required />
+                    </li>
+                    <li>
+                        <label for="phone">Your Phone Number</label>
+                        <input type="tel" name="phone" id="phone" required minlength="5" />
+                    </li>
+                    <li>
+                        <label for="message">Your Message</label>
+                        <textarea name="message" id="message" cols="30" rows="5" required minlength="10"
+                            maxlength="200"></textarea>
+                    </li>
+                    <li>
+                        <label for="channel">How did you find us?</label>
+                        <select name="channel" id="channel" required>
+                            <option value="search">Web Search</option>
+                            <option value="word-of-mouth">Word of Mouth</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </li>
+                </ul>
+            </section>
 
-        <section>
-            <h2>How should we reply?</h2>
-            <ul>
-                <li class="form-control-inline">
-                    <input type="checkbox" name="reply" id="reply-call">
-                    <label for="reply-call">Call me</label>
-                </li>
-                <li class="form-control-inline">
-                    <input type="checkbox" name="reply" id="reply-email">
-                    <label for="reply-email">Send me an email</label>
-                </li>
-                <li class="form-control-inline">
-                    <input type="checkbox" name="reply" id="reply-none">
-                    <label for="reply-none">Don't reply</label>
-                </li>
-            </ul>
-        </section>
+            <section>
+                <h2>How should we reply?</h2>
+                <ul>
+                    <li class="form-control-inline">
+                        <input type="radio" name="reply" id="reply-phone" value="phone" required>
+                        <label for="reply-phone">Call me</label>
+                    </li>
+                    <li class="form-control-inline">
+                        <input type="radio" name="reply" id="reply-email" value="email" required>
+                        <label for="reply-email">Send me an email</label>
+                    </li>
+                    <li class="form-control-inline">
+                        <input type="radio" name="reply" id="reply-none" value="none" required>
+                        <label for="reply-none">Don't reply</label>
+                    </li>
+                </ul>
+            </section>
 
-        <section>
-            <div class="form-control-inline">
-                <input type="checkbox" name="terms" id="terms" />
+            <section class="form-control-inline">
+                <input type="checkbox" name="terms" id="terms" required />
                 <label for="terms">Accept Terms</label>
-            </div>
-        </section>
+            </section>
 
-        <section>
-            <ul class="form-control-button">
-                <li>
-                    <button type="reset" class="reset">Clear</button>
-                </li>
-                <li>
-                    <button type="submit">Submit</button>
-                </li>
-            </ul>
-        </section>
-    </form>
+            <section id="action-section">
+                <button type="reset" class="reset">Clear</button>
+                <button type="submit">Submit</button>
+            </section>
+        </form>
+    </main>
 </body>
 
 </html>
