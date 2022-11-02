@@ -1,8 +1,5 @@
-let age = 32;
-let greetingText = "Hello";
-alert(greetingText);
-alert(greetingText);
-greetingText = "Hi";
-alert(greetingText);
-alert(age);
-alert(age);
+let age = 22;
+let name = "Nam";
+let hobbies = ["Sports", "Cooking", "Reading"];
+
+alert(hobbies[0]);
