@@ -14,4 +14,10 @@ function calculateAdultYears() {
 }
 
 calculateAdultYears();
-alert(adultYear);
+
+let persion = {
+  name: "MM",
+  greet() {
+    alert("Hello");
+  },
+};
