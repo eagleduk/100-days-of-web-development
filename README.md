@@ -44,3 +44,9 @@ Udemy
 251. 문자열(텍스트) 작업 수행
 252. 자바 스크립트 연산자, 약식 연산자 & 값유형
      > - [참고자료](more-on-operators-and-value-types.pdf)
+253. 문자열 연산 & 문자열 메서드
+254. 기본 배열 작업
+255. 여러 파일에 자바 스크립트 코드 분할
+256. 모듈 요약
+
+#### 퀴즈 5:Learning Check: JavaScript Basics
