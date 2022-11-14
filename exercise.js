@@ -23,6 +23,9 @@ console.log("3.", h1Element2);
 //    and store it in a new variable with a name of your choice
 let pElement = document.querySelector(".external-p");
 
+console.log("4.", pElement);
+
 // 5. BONUS TASK: Try changing the text content of the <p> element
 //    you selected in (4) and set it to any other text of your choice
 pElement.innerText = "Change Word!";
+pElement.textContent = "Change Text Content!!";
