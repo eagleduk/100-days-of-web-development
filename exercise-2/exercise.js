@@ -41,8 +41,6 @@ function firstButtonClickEvent() {
 
 function secondButtonClickEvent(event) {
   firstParagraphElement.style.backgroundColor = "blue";
-
-  firstParagraphElement.classList.add("newClass");
 }
 
 firstButtonElement.addEventListener("click", firstButtonClickEvent);
@@ -50,3 +48,9 @@ secondButtonElement.addEventListener("click", secondButtonClickEvent);
 
 // 5) Solve (4) both by changing the "inline styles" as well as by adding CSS classes
 //    Note: You'll have to add those classes to the styles.css file first!
+
+function secondButtonClickEvent(event) {
+  firstParagraphElement.classList.add("newClass");
+}
+
+secondButtonElement.addEventListener("click", secondButtonClickEvent);
