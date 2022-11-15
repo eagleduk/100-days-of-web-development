@@ -5,3 +5,11 @@ anchorElement.href = "https://google.com";
 
 anchorElement = document.querySelector("p a");
 anchorElement.href = "https://udemy.com";
+
+let newAnchorElement = document.createElement("a");
+newAnchorElement.href = "https://google.com";
+newAnchorElement.textContent = "This is lead to google";
+
+let firstParagragraph = document.querySelector("p");
+
+firstParagragraph.append(newAnchorElement);
