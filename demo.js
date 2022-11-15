@@ -4,7 +4,15 @@ let inputText = document.getElementById("remaining-chars");
 let maxLength = inputElement.maxLength;
 
 function inputLength(event) {
-  inputText.innerHTML = maxLength - event.target.value.length;
+  const remainingLength = maxLength - event.target.value.length;
+  inputText.innerHTML = remainingLength;
+  if (remainingLength < 10) {
+    inputText.classList.add("warning");
+    event.target.classList.add("warning");
+  } else {
+    inputText.classList.remove("warning");
+    event.target.classList.remove("warning");
+  }
 }
 
 inputElement.addEventListener("input", inputLength);
