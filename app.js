@@ -13,3 +13,10 @@ newAnchorElement.textContent = "This is lead to google";
 let firstParagragraph = document.querySelector("p");
 
 firstParagragraph.append(newAnchorElement);
+
+let firstH1Element = document.querySelector("h1");
+
+// 현재 방식
+firstH1Element.remove();
+// 구 방식
+firstH1Element.parentElement.removeChild(firstH1Element);
