@@ -27,3 +27,6 @@ firstH1Element.remove();
 
 // 275. 기존 요소 이동
 firstParagragraph.parentElement.append(firstParagragraph);
+
+// 276. 'innerHTML' 작업
+firstParagragraph.innerHTML = "This is <strong>important!</strong>";
