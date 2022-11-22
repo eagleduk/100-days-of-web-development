@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+
+</head>
+
+<body>
+    <header>
+        <h1>Play Tic, Tac, Toe</h1>
+        <span>
+            Built with HTML, CSS, JavaScript
+        </span>
+    </header>
+    <main>
+
+        <div id="black-ground"></div>
+        <aside class="modal">
+            <h2>
+                Enter Your Name
+            </h2>
+            <div>
+                <label for="playername">Player Name</label>
+                <input type="text" name="playername" id="playername" />
+            </div>
+            <div>
+                <button class="btn-alt">Cancel</button>
+                <button>Confirm</button>
+            </div>
+        </aside>
+
+        <section id="player-infomation">
+            <ol>
+                <li>
+                    <article>
+                        <h2>Player1</h2>
+                        <h3>PLAYER NAME</h3>
+                        <p>X</p>
+                        <button class="btn-alt">Edit</button>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <h2>Player2</h2>
+                        <h3>PLAYER NAME</h3>
+                        <p>O</p>
+                        <button class="btn-alt">Edit</button>
+                    </article>
+                </li>
+            </ol>
+            <button>
+                Start New Game
+            </button>
+        </section>
+
+        <section id="game-board">
+            <article>
+                <h2>You won, PlayerName</h2>
+                <p>Click "Start New Game"</p>
+            </article>
+            <p>
+                It's your turn PLAYER NAME!
+            </p>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+
+                <li></li>
+                <li></li>
+                <li></li>
+
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </section>
+    </main>
+</body>
+
+</html>
