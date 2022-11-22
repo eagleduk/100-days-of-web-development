@@ -1,0 +1,54 @@
+#game-board {
+  padding: 0.3rem 2rem;
+  text-align: center;
+}
+
+#game-over {
+  background-color: rgb(78, 77, 77);
+  color: aliceblue;
+  padding: 0.5rem;
+  display: none;
+}
+
+#game-over #game-winner {
+  font-weight: bold;
+}
+
+#game-board p {
+  font: inherit;
+}
+
+#game-board #player-turn {
+  font-weight: bold;
+}
+
+#game-active-board {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 6rem);
+  grid-template-rows: repeat(3, 6rem);
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+#game-active-board li {
+  background-color: rgb(198, 101, 243);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  font-weight: bold;
+  color: rgb(225, 222, 226);
+}
+
+#game-active-board li:hover {
+  background-color: rgb(163, 27, 226);
+}
+
+#game-active-board li.selected {
+  background-color: rgb(163, 27, 226);
+  cursor: default;
+}

@@ -1,0 +1,35 @@
+#black-ground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  top: 20%;
+  left: 10%;
+  width: 80%;
+  padding: 1.5rem 0;
+  text-align: center;
+  background-color: rgb(208, 219, 219);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+  display: none;
+}
+
+.modal h2 {
+  margin: 0;
+}
+
+.modal label {
+  display: block;
+  margin: 0.3rem 0;
+}
+
+.modal input {
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+}

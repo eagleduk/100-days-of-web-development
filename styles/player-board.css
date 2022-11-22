@@ -1,0 +1,36 @@
+#player-board {
+  text-align: center;
+}
+
+#player-board ol {
+  list-style: none;
+  margin: 1rem auto;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+#player-board li {
+  margin: 0.5rem 1rem;
+  padding: 1rem 3rem;
+  background-color: rgb(216, 147, 233);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+}
+
+#player-board h2 {
+  margin: 0.2rem 0;
+  font-size: 1rem;
+}
+
+#player-board h3 {
+  margin: 0.2rem 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#player-board p {
+  margin: 0.2rem 0;
+  font-size: 2rem;
+  font-weight: bold;
+}

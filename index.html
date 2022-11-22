@@ -7,6 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/modal.css">
+    <link rel="stylesheet" href="styles/player-board.css">
+    <link rel="stylesheet" href="styles/game-board.css">
 </head>
 
 <body>
@@ -33,7 +41,7 @@
             </div>
         </aside>
 
-        <section id="player-infomation">
+        <section id="player-board">
             <ol>
                 <li>
                     <article>
@@ -43,6 +51,7 @@
                         <button class="btn-alt">Edit</button>
                     </article>
                 </li>
+
                 <li>
                     <article>
                         <h2>Player2</h2>
@@ -58,26 +67,30 @@
         </section>
 
         <section id="game-board">
-            <article>
-                <h2>You won, PlayerName</h2>
+            <article id="game-over">
+                <h2>
+                    You won, <span id="game-winner">PlayerName</span>
+                </h2>
                 <p>Click "Start New Game"</p>
             </article>
+
             <p>
-                It's your turn PLAYER NAME!
+                It's your turn <span id="player-turn">PLAYER NAME</span>!
             </p>
-            <ul>
-                <li></li>
+
+            <ol id="game-active-board">
+                <li class="selected">O</li>
                 <li></li>
                 <li></li>
 
                 <li></li>
-                <li></li>
+                <li class="selected">X</li>
                 <li></li>
 
                 <li></li>
+                <li class="selected">X</li>
                 <li></li>
-                <li></li>
-            </ul>
+            </ol>
         </section>
     </main>
 </body>
