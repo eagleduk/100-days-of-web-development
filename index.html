@@ -15,6 +15,10 @@
     <link rel="stylesheet" href="styles/modal.css">
     <link rel="stylesheet" href="styles/player-board.css">
     <link rel="stylesheet" href="styles/game-board.css">
+
+    <script src="scripts/configurations.js" defer></script>
+    <script src="scripts/game.js" defer></script>
+    <script src="scripts/app.js" defer></script>
 </head>
 
 <body>
@@ -27,37 +31,47 @@
     <main>
 
         <div id="black-ground"></div>
-        <aside class="modal">
-            <h2>
-                Enter Your Name
-            </h2>
-            <div>
-                <label for="playername">Player Name</label>
-                <input type="text" name="playername" id="playername" />
-            </div>
-            <div>
-                <button class="btn-alt">Cancel</button>
-                <button>Confirm</button>
-            </div>
+        <aside class="modal" id="playerNamePopup">
+            <form>
+                <h2>
+                    Enter Your Name
+                </h2>
+
+                <div>
+                    <label for="playerName">Player Name</label>
+                    <input type="text" name="playerName" id="playerName" />
+                </div>
+
+                <div style="display:none">
+                    <p>
+                        Please Check Player Name.
+                    </p>
+                </div>
+
+                <div>
+                    <button type="reset" class="btn-alt" id="cancelPlayerName">Cancel</button>
+                    <button>Confirm</button>
+                </div>
+            </form>
         </aside>
 
         <section id="player-board">
             <ol>
                 <li>
-                    <article>
+                    <article id="player-1-info">
                         <h2>Player1</h2>
                         <h3>PLAYER NAME</h3>
                         <p>X</p>
-                        <button class="btn-alt">Edit</button>
+                        <button class="btn-alt" id="player-1-button" data-player-index="1">Edit</button>
                     </article>
                 </li>
 
                 <li>
-                    <article>
+                    <article id="player-2-info">
                         <h2>Player2</h2>
                         <h3>PLAYER NAME</h3>
                         <p>O</p>
-                        <button class="btn-alt">Edit</button>
+                        <button class="btn-alt" id="player-2-button" data-player-index="2">Edit</button>
                     </article>
                 </li>
             </ol>

@@ -33,3 +33,11 @@
   padding: 0.5rem 1rem;
   margin-bottom: 1rem;
 }
+
+.modal .error label {
+  color: rgb(212, 66, 66);
+}
+.modal .error input {
+  background-color: rgb(207, 67, 67);
+  border-color: rgb(207, 67, 67);
+}

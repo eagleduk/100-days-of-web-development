@@ -28,4 +28,4 @@ Udemy
      > - [FormData](https://developer.mozilla.org/ko/docs/Web/API/FormData): form 필드와 그 값을 나타내는 일련의 key/value 쌍을 쉽게 생성할 수 있는 방법을 제공 `new FormDaya([formElement])`
 
 317. 자바 스크립트로 사용자 입력 확인
-318. 제출괸 데이터 저장 & 관리
+318. 제출된 데이터 저장 & 관리

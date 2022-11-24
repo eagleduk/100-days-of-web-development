@@ -34,7 +34,7 @@
 }
 
 #game-active-board li {
-  background-color: rgb(198, 101, 243);
+  background-color: rgb(210, 146, 240);
   cursor: pointer;
   display: flex;
   justify-content: center;
