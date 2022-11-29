@@ -1,6 +1,7 @@
 #game-board {
   padding: 0.3rem 2rem;
   text-align: center;
+  display: none;
 }
 
 #game-over {
