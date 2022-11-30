@@ -1,3 +1,9 @@
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
 #carousel-example {
   width: 100%;
   max-width: 50rem;
@@ -8,4 +14,9 @@
 #carousel-example img {
   height: 30rem;
   object-fit: cover;
+}
+
+#input-group-example {
+  width: 30rem;
+  margin: 2rem auto;
 }
