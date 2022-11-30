@@ -4,7 +4,9 @@ function gameStart() {
     return;
   }
 
+  gameRound = 1;
   playingGame = true;
+  gameOverBoard.firstElementChild.innerHTML = `You won, <span id="game-winner">PlayerName</span>`;
 
   gameOverBoard.style.display = "none";
   gameBoard.style.display = "block";
@@ -80,13 +82,17 @@ function selectedBoard(event) {
   const col = +boardIndex % 3;
 
   game[row][col] = nowPlayer.symbol;
-
+  gameRound++;
   const result = checkGameOver(row, col);
 
   if (result) {
     gameOver(nowPlayer.name);
     playingGame = false;
   } else {
+    if (gameRound === 9) {
+      gameOverBoard.firstElementChild.textContent = "Draw";
+      return;
+    }
     startPlayer = startPlayer === 0 ? 1 : 0;
     playerTurn.textContent = players[startPlayer].name;
   }

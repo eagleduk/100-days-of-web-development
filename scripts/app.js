@@ -1,3 +1,4 @@
+let gameRound = 1;
 let selectedPlayerIndex = 0;
 let playingGame = false;
 
