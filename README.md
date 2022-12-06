@@ -27,3 +27,10 @@ com/academind/100-days-of-web-development/)
 350. 모듈 소개
 351. 'npm'으로 익스프레스 설치
 352. 익스프레스 & 처리요청 + 응답으로 서버 만들기
+353. 익스프레스로 사용자 데이터 구문 분석
+
+> 입력양식(`form[method=POST]`) 으로 데이터를 받을시, 기본적으로는 TEXT 방식으로 넘어오기 떄문에, express 미들웨어를 사용하여 encode 를 진행해 주어야 한다.
+>
+> ```javascript
+> app.use(express.urlencoded());
+> ```
