@@ -1,8 +1,11 @@
+const fs = require("fs");
+const path = require("path");
+
 const express = require("express");
 
 const app = express();
 
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 
 app.get("/currenttime", function (req, res) {
   res.send(
@@ -24,7 +27,14 @@ app.get("/", function (req, res) {
 
 app.post("/store-user", function (req, res) {
   const username = req.body.username;
-  console.log(username);
+
+  const usersFile = path.join(__dirname, "data", "users.json");
+  const userText = fs.readFileSync(usersFile);
+  const userJSON = JSON.parse(userText);
+  userJSON.push(username);
+
+  fs.writeFileSync(usersFile, JSON.stringify(userJSON));
+
   res.send("<h1>User Stored!! </h1>");
 });
 

@@ -29,8 +29,21 @@ com/academind/100-days-of-web-development/)
 352. 익스프레스 & 처리요청 + 응답으로 서버 만들기
 353. 익스프레스로 사용자 데이터 구문 분석
 
-> 입력양식(`form[method=POST]`) 으로 데이터를 받을시, 기본적으로는 TEXT 방식으로 넘어오기 떄문에, express 미들웨어를 사용하여 encode 를 진행해 주어야 한다.
->
-> ```javascript
-> app.use(express.urlencoded());
-> ```
+     > 입력양식(`form[method=POST]`) 으로 데이터를 받을시, 기본적으로는 TEXT 방식으로 넘어오기 떄문에, express 미들웨어를 사용하여 encode 를 진행해 주어야 한다.
+     >
+     > ```javascript
+     > app.use(express.urlencoded({ extended: true }));
+     > ```
+
+354. (서버측) 파일에 데이터 저장
+     > node 에서 기본적인 파일 읽기, 쓰기 및 경로 관련 모듈
+     >
+     > - [FileSystem](https://nodejs.org/docs/latest-v16.x/api/fs.html)
+     > - [path](https://nodejs.org/docs/latest-v16.x/api/path.html)
+     >
+     > ```javascript
+     > require("fs"); // fileSystem 관련된 모듈
+     > require("path"); // 파일 경로에 관련된 모듈
+     > __dirname; // node 에서 제공하는 실제 실행되는 파일의 절대 경로
+     > ```
+355. '제이슨'형식에 대한 추가 정보
