@@ -43,9 +43,11 @@ app.get("/users", function (req, res) {
   const userText = fs.readFileSync(usersFile);
   const userJSON = JSON.parse(userText);
 
-  let text = "";
+  let text = "<ul>";
 
-  userJSON.forEach((user) => (text += "<h1>" + user + "</h1>"));
+  userJSON.forEach((user) => (text += "<li>" + user + "</li>"));
+
+  text += "</ul>";
 
   res.send(text);
 });

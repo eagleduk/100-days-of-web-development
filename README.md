@@ -47,3 +47,4 @@ com/academind/100-days-of-web-development/)
      > __dirname; // node 에서 제공하는 실제 실행되는 파일의 절대 경로
      > ```
 355. '제이슨'형식에 대한 추가 정보
+356. 파일 데이터 읽기 & 동적 응답 반환(동적 HTML 코드)
