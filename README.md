@@ -29,7 +29,7 @@ com/academind/100-days-of-web-development/)
 352. 익스프레스 & 처리요청 + 응답으로 서버 만들기
 353. 익스프레스로 사용자 데이터 구문 분석
 
-     > 입력양식(`form[method=POST]`) 으로 데이터를 받을시, 기본적으로는 TEXT 방식으로 넘어오기 떄문에, express 미들웨어를 사용하여 encode 를 진행해 주어야 한다.
+     > 입력양식(`form[method=POST]`) 으로 데이터를 받을시, 기본적으로는 TEXT 방식으로 넘어오기 떄문에, express 미들웨어를 사용하여 데이터를 구분 분석 및 변환을 진행해 주어야 한다.
      >
      > ```javascript
      > app.use(express.urlencoded({ extended: true }));
@@ -49,3 +49,6 @@ com/academind/100-days-of-web-development/)
 355. '제이슨'형식에 대한 추가 정보
 356. 파일 데이터 읽기 & 동적 응답 반환(동적 HTML 코드)
 357. '노드몬'으로 개발자 워크플로 향상
+358. 요약
+
+- 퀴즈12: Learning Check: ExpressJS Basics
