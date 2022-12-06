@@ -1,23 +1,21 @@
-const http = require("http");
+const express = require("express");
 
-function handleServer(request, response) {
-  if (request.url === "/currentTime") {
-    response.statusCode = 200;
-    response.end(
-      "<h1>" +
-        new Intl.DateTimeFormat("ko", {
-          hourCycle: "h23",
-          dateStyle: "short",
-          timeStyle: "short",
-        }).format() +
-        "</h1>"
-    );
-  } else if (request.url === "/") {
-    response.statusCode = 200;
-    response.end("<h1>Hello World!</h1>");
-  }
-}
+const app = express();
 
-const server = http.createServer(handleServer);
+app.get("/currenttime", function (req, res) {
+  res.send(
+    "<h1>" +
+      new Intl.DateTimeFormat("ko", {
+        hourCycle: "h23",
+        dateStyle: "medium",
+        timeStyle: "medium",
+      }).format() +
+      "</h1>"
+  );
+});
 
-server.listen(3000);
+app.get("/", function (req, res) {
+  res.send("<h1>Hello World!</h1>");
+});
+
+app.listen(3000);
