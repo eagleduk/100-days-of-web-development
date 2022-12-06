@@ -38,4 +38,16 @@ app.post("/store-user", function (req, res) {
   res.send("<h1>User Stored!! </h1>");
 });
 
+app.get("/users", function (req, res) {
+  const usersFile = path.join(__dirname, "data", "users.json");
+  const userText = fs.readFileSync(usersFile);
+  const userJSON = JSON.parse(userText);
+
+  let text = "";
+
+  userJSON.forEach((user) => (text += "<h1>" + user + "</h1>"));
+
+  res.send(text);
+});
+
 app.listen(3000);
