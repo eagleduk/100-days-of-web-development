@@ -41,7 +41,13 @@ app.post("/recommend", function (req, res) {
 });
 
 app.get("/restaurants", function (req, res) {
-  res.render("restaurants");
+  const dataFile = path.join(__dirname, "data", "restaurants.json");
+  const fileData = fs.readFileSync(dataFile);
+  const jsonData = JSON.parse(fileData);
+  res.render("restaurants", {
+    numberOfRestaurants: jsonData.length,
+    restaurants: jsonData,
+  });
 });
 
 app.listen(3000);

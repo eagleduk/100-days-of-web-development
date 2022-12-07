@@ -36,3 +36,5 @@ Udemy
      >
      > res.render("index"); // index.ejs 를 화면에 그려준다.
      > ```
+
+366. 템플릿으로 동적 콘텐츠 렌더링
