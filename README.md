@@ -51,3 +51,5 @@ Udemy
      > - %> Plain ending tag
      > - -%> Trim-mode ('newline slurp') tag, trims following newline
      > - \_%> ‘Whitespace Slurping’ ending tag, removes all whitespace after it
+
+368. 조건부 콘텐츠 렌더링
