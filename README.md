@@ -53,3 +53,4 @@ Udemy
      > - \_%> ‘Whitespace Slurping’ ending tag, removes all whitespace after it
 
 368. 조건부 콘텐츠 렌더링
+369. 일부 콘텐츠 포함

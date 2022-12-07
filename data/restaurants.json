@@ -1,16 +1,1 @@
-[
-  {
-    "name": "a",
-    "address": "a",
-    "cuisine": "fd",
-    "website": "http://www.a.com",
-    "description": "a"
-  },
-  {
-    "name": "b",
-    "address": "b",
-    "cuisine": "b",
-    "website": "http://www.b.com",
-    "description": "fwejioawef"
-  }
-]
+[{"name":"a","address":"a","cuisine":"fd","website":"http://www.a.com","description":"a"},{"name":"b","address":"b","cuisine":"b","website":"http://www.b.com","description":"fwejioawef"},{"name":"v","address":"v","cuisine":"v","website":"http://www.b.com","description":"vvasdf"}]
