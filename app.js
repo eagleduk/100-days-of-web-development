@@ -5,27 +5,26 @@ const express = require("express");
 
 const app = express();
 
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
+
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
 
 app.get("/", function (req, res) {
-  const htmlFile = path.join(__dirname, "views", "index.html");
-  res.sendFile(htmlFile);
+  res.render("index");
 });
 
 app.get("/confirm", function (req, res) {
-  const htmlFile = path.join(__dirname, "views", "confirm.html");
-  res.sendFile(htmlFile);
+  res.render("confirm");
 });
 
 app.get("/about", function (req, res) {
-  const htmlFile = path.join(__dirname, "views", "about.html");
-  res.sendFile(htmlFile);
+  res.render("about");
 });
 
 app.get("/recommend", function (req, res) {
-  const htmlFile = path.join(__dirname, "views", "recommend.html");
-  res.sendFile(htmlFile);
+  res.render("recommend");
 });
 
 app.post("/recommend", function (req, res) {
@@ -42,8 +41,7 @@ app.post("/recommend", function (req, res) {
 });
 
 app.get("/restaurants", function (req, res) {
-  const htmlFile = path.join(__dirname, "views", "restaurants.html");
-  res.sendFile(htmlFile);
+  res.render("restaurants");
 });
 
 app.listen(3000);

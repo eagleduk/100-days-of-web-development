@@ -22,3 +22,17 @@ Udemy
      > ```
 
 364. 양식 데이터 구문 분석 & 요청 리다이렉트
+365. ejs 템플릿 엔진 추가
+
+     > - [npm install ejs](https://ejs.co/)
+     > - 엔진이 사용할 기본 폴더를 설정해 주어야 한다.
+     > - express 미들웨어를 통하여 사용할 템플릿 엔진을 설정해 주어야 한다.
+     > - 엔진에 맞는 파일로 확장자 변경(ejs -> _.ejs, pug -> _.pug)
+     > - 템플릿 엔진을 사용할 경우, response.render 함수로 해당 템플릿을 응답 객체에 넣어 준다.
+     >
+     > ```javascript
+     > app.set("views", path.join(__dirname, "views")); // 템플릿 엔진의 기본이 되는 위치를 설정
+     > app.set("view engine", "ejs"); // 사용할 템플릿 엔진 설정
+     >
+     > res.render("index"); // index.ejs 를 화면에 그려준다.
+     > ```
