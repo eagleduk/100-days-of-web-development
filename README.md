@@ -38,3 +38,16 @@ Udemy
      > ```
 
 366. 템플릿으로 동적 콘텐츠 렌더링
+367. EJS & 반복문으로 반복 콘텐츠 출력하기
+
+     > EJS 에서 제공하는 특수 태그
+     >
+     > - <% 'Scriptlet' tag, for control-flow, no output
+     > - <%\_ ‘Whitespace Slurping’ Scriptlet tag, strips all whitespace before it
+     > - <%= Outputs the value into the template (HTML escaped)
+     > - <%- Outputs the unescaped value into the template
+     > - <%# Comment tag, no execution, no output
+     > - <%% Outputs a literal '<%'
+     > - %> Plain ending tag
+     > - -%> Trim-mode ('newline slurp') tag, trims following newline
+     > - \_%> ‘Whitespace Slurping’ ending tag, removes all whitespace after it
