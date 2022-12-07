@@ -20,3 +20,5 @@ Udemy
      > ```javascript
      > app.use(express.static("[정적 파일 제공 Baes URL]"));
      > ```
+
+364. 양식 데이터 구문 분석 & 요청 리다이렉트
