@@ -54,3 +54,7 @@ Udemy
 
 368. 조건부 콘텐츠 렌더링
 369. 일부 콘텐츠 포함
+370. EJS & IDE 지원
+371. 모듈 요약
+
+- 퀴즈 13: Learning Check: Static & Dynamic Content
