@@ -18,6 +18,11 @@
                     <% } else { %>
                         <p>Find your next favorite restaurants with help of our other users!</p>
                         <p>We found <%= numberOfRestaurants %> restaurants.</p>
+
+                        <form action="" method="GET">
+                            <button class="btn" name="order" value="<%= order %>">order</button>
+                        </form>
+
                         <ul id="restaurants-list">
                             <% restaurants.forEach(function(restaurant){ %>
                                 <%- include('includes/items/restaurant-item', {restaurant: restaurant}); -%>

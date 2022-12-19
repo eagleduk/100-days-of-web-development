@@ -21,10 +21,18 @@ router.post("/recommend", function (req, res) {
 });
 
 router.get("/restaurants", function (req, res) {
+  const order = req.query.order || "0";
   const restaurants = resData.getRestaurantData();
+  restaurants.sort(function (a, b) {
+    return (order === "0" && a.name > b.name) ||
+      (order === "1" && b.name > a.name)
+      ? 1
+      : -1;
+  });
   res.render("restaurants", {
     numberOfRestaurants: restaurants.length,
     restaurants: restaurants,
+    order: order === "0" ? "1" : "0",
   });
 });
 
