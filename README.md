@@ -58,3 +58,12 @@ Udemy
 371. 모듈 요약
 
 - 퀴즈 13: Learning Check: Static & Dynamic Content
+
+## 동적 라우트(URL), 오류 & 관리 처리하기 더 큰 Express 프로젝트
+
+#### 38 Days
+
+372. 모듈 소개
+373. 동적 경록 소개
+374. 고유 ID로 데이터 관리
+     > - [npm install uuid](https://github.com/uuidjs/uuid)
