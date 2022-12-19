@@ -59,11 +59,21 @@ app.get("/restaurants/:id", function (req, res) {
   const fileData = fs.readFileSync(dataFile);
   const jsonData = JSON.parse(fileData);
 
-  const restaurant = jsonData.find((restaurant) => restaurant.id === id);
-  console.log(restaurant);
-  res.render("restaurants-detail", {
-    restaurant,
-  });
+  const [restaurant] = jsonData.filter((restaurant) => restaurant.id === id);
+
+  return restaurant
+    ? res.render("restaurants-detail", {
+        restaurant,
+      })
+    : res.status(404).render("404");
+});
+
+app.use(function (req, res) {
+  res.status(404).render("404");
+});
+
+app.use(function (err, req, res, next) {
+  res.status(500).render("500");
 });
 
 app.listen(3000);
