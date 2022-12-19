@@ -80,3 +80,7 @@ Udemy
 
      > - 쿼리 매개변수: URL 경로에 추가 정보를 추가 <strong>/restaurants?query=query</strong>
      > - 라우트 매개변수: URL/경로를 방문할 때 다른 값을 유지하는 라우트 매개변수 <strong>/restaurants/:id</strong>
+
+385. 모듈 요약
+
+- 퀴즈 14: Learning Check: Advanced Express Features
