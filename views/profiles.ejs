@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
   <link rel="stylesheet" href="/styles/base.css">
   <link rel="stylesheet" href="/styles/profiles.css">
 </head>
+
 <body>
   <main>
     <section id="user-controls">
@@ -15,14 +17,21 @@
     </section>
     <section id="user-profiles">
       <ul>
-        <li class="user-item">
-          <article>
-            <img src="" alt="The image of the user.">
-            <h2>User name</h2>
-          </article>
-        </li>
+        <% users.forEach(user=> { %>
+
+          <li class="user-item">
+            <article>
+              <img src="<%= user.file.path %>" alt="The image of the user.">
+              <h2>
+                <%= user.username %>
+              </h2>
+            </article>
+          </li>
+
+          <% }) %>
       </ul>
     </section>
   </main>
 </body>
+
 </html>
