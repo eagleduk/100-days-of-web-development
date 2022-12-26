@@ -12,6 +12,7 @@ app.set("views", path.join(__dirname, "views"));
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"));
+// URL "/uploads" 로 요청하는 작업은 uplaods/ 폴더에서 찾는다.
 app.use("/uploads", express.static("uploads"));
 
 app.use(userRoutes);
