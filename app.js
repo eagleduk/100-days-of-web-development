@@ -1,8 +1,8 @@
 const path = require("path");
-
 const express = require("express");
 
 const blogRoutes = require("./routes/blog");
+const { connect } = require("./data/db");
 
 const app = express();
 
@@ -22,4 +22,6 @@ app.use(function (error, req, res, next) {
   res.status(500).render("500");
 });
 
-app.listen(3000);
+connect().then(() => {
+  app.listen(3000);
+});

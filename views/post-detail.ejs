@@ -13,7 +13,9 @@
         <%= post.title %>
       </h1>
       <section id="post-meta">
-        <%= post.summary %>
+        <%= post.creator.name %> |
+          <%= new Intl.DateTimeFormat("ko", { weekday: "long" , year:"numeric", month:"long", day:"numeric", hour12:
+            false, hour: "numeric" , minute: "numeric" }).format(post.date) %>
       </section>
       <hr>
       <section>
