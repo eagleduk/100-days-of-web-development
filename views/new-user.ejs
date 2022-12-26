@@ -8,6 +8,7 @@
   <title>New Profile</title>
   <link rel="stylesheet" href="/styles/base.css">
   <link rel="stylesheet" href="/styles/profiles.css">
+  <script src="/scripts/file-preview.js" defer></script>
 </head>
 
 <body>
@@ -20,6 +21,10 @@
       <div class="form-control">
         <label for="image">User image</label>
         <input type="file" name="image" id="image" required accept="image/png, image/jpeg">
+
+        <div>
+          <img src="" alt="" id="preview" width="150px">
+        </div>
       </div>
       <button class="btn">Save User</button>
     </form>
