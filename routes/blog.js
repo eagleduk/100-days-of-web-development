@@ -45,7 +45,6 @@ router.post("/posts", async function (req, res) {
   };
 
   const result = await db.getDb().collection("posts").insertOne(newPost);
-  console.log(result);
   res.redirect("/posts");
 });
 
@@ -115,24 +114,32 @@ router.post("/posts/:id/delete", async function (req, res) {
 });
 
 router.get("/posts/:id/comments", async function (req, res) {
-  const postId = new ObjectId(req.params.id);
-  const comments = await db
-    .getDb()
-    .collection("comments")
-    .find({ postId: postId })
-    .toArray();
-  return res.status(200).json({ result: comments });
+  try {
+    const postId = new ObjectId(req.params.id);
+    const comments = await db
+      .getDb()
+      .collection("comments")
+      .find({ postId: postId })
+      .toArray();
+    return res.status(200).json(comments);
+  } catch (error) {
+    return res.status(500).json({ message: "Comments Load Error" });
+  }
 });
 
 router.post("/posts/:id/comments", async function (req, res) {
-  const postId = new ObjectId(req.params.id);
-  const newComment = {
-    postId: postId,
-    title: req.body.title,
-    text: req.body.text,
-  };
-  await db.getDb().collection("comments").insertOne(newComment);
-  return res.status(200).json({ message: "Comment added!" });
+  try {
+    const postId = new ObjectId(req.params.id);
+    const newComment = {
+      postId: postId,
+      title: req.body.title,
+      text: req.body.text,
+    };
+    await db.getDb().collection("comments").insertOne(newComment);
+    return res.status(200).json({ message: "Comment added!" });
+  } catch (err) {
+    return res.status(500).json({ message: "Comment save Error" });
+  }
 });
 
 module.exports = router;
