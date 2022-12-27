@@ -11,6 +11,7 @@ Udemy
 478. 모듈 소개
 479. Ajax란? 그리고 왜 필요할까요?
 480. 'Ajax'란 무엇입니까?
+
      > - XMLHttpRequest
      >   > - 브라우저에서 사용할 수 있는 내장 객체
      >   > - Axios
@@ -20,3 +21,5 @@ Udemy
      >   > - XMLHttpRequest 보다 현대적
      >   > - Promise 지원
      >   > - XMLHttpRequest 보다 사용하기 쉽다.
+
+481. 프로젝트 시작 & 문제
