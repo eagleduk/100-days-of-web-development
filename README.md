@@ -28,3 +28,47 @@ Udemy
        > - 서버에 저장된 세션에 대한 정보를 사용자의 브라우저에 저장
        > - 사용자 추적 및 광고에 사용
        > - 실생활에서의 "티켓" 과 유사한 개념
+
+498. 웹사이트에 세션 지원 추가
+
+     - Express Session
+
+       > - [npm i express-session](https://github.com/expressjs/session)
+       >
+       > ```javascript
+       > const express = require("express");
+       > const session = require("express-session");
+       >
+       > const app = express();
+       >
+       > app.use(
+       >   session({
+       >     secret: "string", // 필수옵션. 세션 ID 쿠키에 서명하는 데 사용되는 임의의 문자열
+       >     resave: true || false, // 세션의 데이터가 실제로 변경된 경우에만 데이터베이스에서 업데이트 유무
+       >     saveUninitialized: true || false, // 세션이 저장되는 데이터에 관하여 초기화 유무
+       >     store, // 세션 데이터가 실제로 저장되어야 하는 위치 (https://github.com/expressjs/session#compatible-session-stores 참조)
+       >   })
+       > );
+       > ```
+
+     - MongoDB Session
+
+       > - [npm i connect-mongo](https://github.com/jdesboeufs/connect-mongo)
+       > - [npm i connect-mongodb-session](https://github.com/mongodb-js/connect-mongodb-session): 경량화 버전
+       >
+       > ```javascript
+       > const express = require("express");
+       > const session = require("express-session");
+       > const mongoDBSession = require("connect-mongodb-session");
+       >
+       > const MongoDBStore = mongoDBSession(session);
+       >
+       > const store = new MongoDBStore({
+       >   uri: "mongodb://localhost:27017/connect_mongodb_session_test",
+       >   collection: "mySessions",
+       > });
+       > const app = express();
+       > app.use({
+       >   store: store,
+       > });
+       > ```
