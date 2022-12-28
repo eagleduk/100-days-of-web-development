@@ -21,6 +21,18 @@ router.get("/login", function (req, res) {
 router.post("/signup", async function (req, res) {
   const { email, "confirm-email": confirm, password } = req.body;
 
+  if (!email || !confirm || !password || email !== confirm) {
+    console.log("login validation error");
+    return res.redirect("/signup");
+  }
+
+  const existUser = await db.getDb().collection("users").findOne({ email });
+
+  if (existUser) {
+    console.log("Exist User");
+    return res.redirect("/signup");
+  }
+
   const hashPassword = bcrypt.hashSync(password, hashSalt);
 
   const user = {
@@ -28,7 +40,7 @@ router.post("/signup", async function (req, res) {
     password: hashPassword,
   };
   await db.getDb().collection("users").insertOne(user);
-  res.redirect("/login");
+  return res.redirect("/login");
 });
 
 router.post("/login", async function (req, res) {
@@ -41,11 +53,10 @@ router.post("/login", async function (req, res) {
     const compare = bcrypt.compareSync(password, user.password);
     console.log(compare);
     if (compare) {
-      return res.redirect("/");
+      return res.redirect("/admin");
     }
     return res.redirect("/login");
   }
-
   return res.redirect("/signup");
 });
 
