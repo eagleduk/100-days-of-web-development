@@ -73,3 +73,12 @@ Udemy
        >   store: store,
        > });
        > ```
+
+499. 세션에 인증 데이터 저장
+     > ```javascript
+     > req.session.user = { id: existUser._id, email: existUser.email }; // 세션에 저장할 user 객체
+     > req.session.save(function () {
+     >   // 세션의 저장이 끝나고 수행하는 Callback
+     >   res.redirect("/admin");
+     > });
+     > ```

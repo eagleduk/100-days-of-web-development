@@ -40,7 +40,11 @@ router.post("/signup", async function (req, res) {
     password: hashPassword,
   };
   await db.getDb().collection("users").insertOne(user);
-  return res.redirect("/login");
+
+  req.session.user = { id: existUser._id, email: existUser.email };
+  req.session.save(function () {
+    res.redirect("/admin");
+  });
 });
 
 router.post("/login", async function (req, res) {
