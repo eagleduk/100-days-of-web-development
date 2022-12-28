@@ -41,30 +41,33 @@ router.post("/signup", async function (req, res) {
   };
   await db.getDb().collection("users").insertOne(user);
 
-  req.session.user = { id: existUser._id, email: existUser.email };
+  return res.redirect("/login");
+});
+
+router.post("/login", async function (req, res) {
+  const { email, password } = req.body;
+
+  const user = await db.getDb().collection("users").findOne({ email });
+
+  if (!user) {
+    return res.redirect("/login");
+  }
+  const compare = bcrypt.compareSync(password, user.password);
+  if (!compare) {
+    return res.redirect("/login");
+  }
+  req.session.user = { id: user._id, email: user.email };
   req.session.save(function () {
     res.redirect("/admin");
   });
 });
 
-router.post("/login", async function (req, res) {
-  const { email, password } = req.body;
-  console.log(email, password);
-
-  const user = await db.getDb().collection("users").findOne({ email });
-
-  if (user) {
-    const compare = bcrypt.compareSync(password, user.password);
-    console.log(compare);
-    if (compare) {
-      return res.redirect("/admin");
-    }
-    return res.redirect("/login");
-  }
-  return res.redirect("/signup");
-});
-
 router.get("/admin", function (req, res) {
+  // session ticket check
+  console.log(req.session.user);
+  if (!req.session.user) {
+    return res.status(401).render("401");
+  }
   res.render("admin");
 });
 
