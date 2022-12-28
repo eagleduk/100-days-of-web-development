@@ -12,6 +12,7 @@ const app = express();
 const MongoDBStore = mongoDBSession(session);
 const store = new MongoDBStore({
   url: "mongodb://localhost:27017",
+  databaseName: "auth-demo",
   collection: "sessions",
 });
 

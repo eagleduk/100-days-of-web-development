@@ -65,6 +65,7 @@ Udemy
        >
        > const store = new MongoDBStore({
        >   uri: "mongodb://localhost:27017/connect_mongodb_session_test",
+       >   databaseName: "myDb",
        >   collection: "mySessions",
        > });
        > const app = express();
