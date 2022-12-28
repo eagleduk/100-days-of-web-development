@@ -64,13 +64,14 @@ router.post("/login", async function (req, res) {
 
 router.get("/admin", function (req, res) {
   // session ticket check
-  console.log(req.session.user);
   if (!req.session.user) {
     return res.status(401).render("401");
   }
   res.render("admin");
 });
 
-router.post("/logout", function (req, res) {});
+router.post("/logout", function (req, res) {
+  req.session.user = null;
+});
 
 module.exports = router;

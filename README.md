@@ -80,6 +80,14 @@ Udemy
      > req.session.save(function () {
      >   // 세션의 저장이 끝나고 수행하는 Callback
      >   res.redirect("/admin");
-     > });
+     > }); // 데이터베이스에 session 데이터를 저장한다.
      > ```
 500. 엑세스 제어를 위한 세션 & 쿠키 사용
+501. 로그아웃 기능 추가하기
+     > ```javascript
+     > req.session.user = null; // 세션에 저장할 user 객체를 지운다. 단. session 에 대한 데이터베이스는 지우지 않는다.
+     > req.session.destory(function () {
+     >   // 세션의 삭제가 끝나고 수행하는 Callback
+     >   res.redirect("/");
+     > }); // 데이터베이스에 저장된 session 데이터를 지운다.
+     > ```
