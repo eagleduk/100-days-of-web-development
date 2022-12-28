@@ -3,6 +3,7 @@ const bcrypt = require("bcryptjs");
 
 const db = require("../data/database");
 
+const hashSalt = bcrypt.genSaltSync(10);
 const router = express.Router();
 
 router.get("/", function (req, res) {
@@ -20,8 +21,7 @@ router.get("/login", function (req, res) {
 router.post("/signup", async function (req, res) {
   const { email, "confirm-email": confirm, password } = req.body;
 
-  const salt = bcrypt.genSaltSync(10);
-  const hashPassword = bcrypt.hashSync(password, salt);
+  const hashPassword = bcrypt.hashSync(password, hashSalt);
 
   const user = {
     email,
@@ -31,7 +31,23 @@ router.post("/signup", async function (req, res) {
   res.redirect("/login");
 });
 
-router.post("/login", async function (req, res) {});
+router.post("/login", async function (req, res) {
+  const { email, password } = req.body;
+  console.log(email, password);
+
+  const user = await db.getDb().collection("users").findOne({ email });
+
+  if (user) {
+    const compare = bcrypt.compareSync(password, user.password);
+    console.log(compare);
+    if (compare) {
+      return res.redirect("/");
+    }
+    return res.redirect("/login");
+  }
+
+  return res.redirect("/signup");
+});
 
 router.get("/admin", function (req, res) {
   res.render("admin");
