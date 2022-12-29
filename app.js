@@ -29,6 +29,24 @@ app.use(
     store: store,
   })
 );
+
+app.use(async function (req, res, next) {
+  const loginUser = req.session.user;
+  if (!loginUser) {
+    return next();
+  }
+  const userData = await db
+    .getDb()
+    .collection("users")
+    .findOne({ _id: loginUser.id });
+  console.log(userData);
+  if (userData) {
+    res.locals.isAuth = true;
+    res.locals.isAdmin = userData.isAdmin;
+  }
+  next();
+});
+
 app.use(demoRoutes);
 
 app.use(function (error, req, res, next) {
