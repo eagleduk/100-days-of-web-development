@@ -99,3 +99,28 @@ Udemy
      - 개발자가 직접 쿠키에 대해 작업할 필요가 없다.
      - 세션에 저장하면 자동으로 쿠키가 저장되어 사용자의 브라우저에 전달이 된다.
      - 사용자가 서버에 대하여 요청시 전달받은 쿠키를 헤더에 담아서 보내진다.
+
+503. 세션 자세히 알아보기(인증 이상)
+
+     - 페이지를 리 다이렉션할 때, 사용자의 입력값을 유지하고 싶으면 세션을 이용하여 전달할 수 있다.
+     - 세션을 저장할 때, 익명 함수에서 `return`을 설정해도 해당 요청에 관하여 함수가 종료되는 부분이 아니기 때문에 중복 요청을 보내는 에러가 발생할 수 있다.
+
+       ```javascript
+       req.session.save(function () {
+         // 익명 함수에서는 return 을 설정해도 req.session.save 에 대하여 반환될 뿐이다.
+         return res.redirect("/admin");
+       });
+       // "/admin", "/login" 에 대하여 중복 요청을 수행한다.
+       return res.redirect("/login");
+
+       req.session.save(function () {
+         // 익명 함수에서는 return 을 설정해도 req.session.save 에 대하여 반환될 뿐이다.
+         return res.redirect("/admin");
+       });
+       // 세션을 저장항 이후에 전체 함수에 관하여 종료를 선언한다.
+       return;
+       // 해당 redirect 가 요청되가 전에 함수가 종료됨으로 중복 요청이 이루어 지지 않는다.
+       return res.redirect("/login");
+       ```
+
+     - 세션을 이용하여 사용자 입력값을 전달 후에는 전달된 세션값을 이용하는 구간에서 값을 추출하고 해당 입력값에 대한 세션을 초기화 해주어야 한다.

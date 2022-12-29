@@ -11,7 +11,18 @@ router.get("/", function (req, res) {
 });
 
 router.get("/signup", function (req, res) {
-  res.render("signup");
+  let signupData = req.session.signupData;
+
+  if (!signupData) {
+    signupData = {
+      email: "",
+      confirm: "",
+      password: "",
+    };
+  }
+  req.session.signupData = null;
+
+  res.render("signup", { signupData });
 });
 
 router.get("/login", function (req, res) {
@@ -22,15 +33,32 @@ router.post("/signup", async function (req, res) {
   const { email, "confirm-email": confirm, password } = req.body;
 
   if (!email || !confirm || !password || email !== confirm) {
-    console.log("login validation error");
-    return res.redirect("/signup");
+    req.session.signupData = {
+      email,
+      confirm,
+      password,
+      message: "Check your input data.",
+    };
+    req.session.save(function () {
+      res.redirect("/signup");
+    });
+    return;
   }
 
   const existUser = await db.getDb().collection("users").findOne({ email });
 
   if (existUser) {
     console.log("Exist User");
-    return res.redirect("/signup");
+    req.session.signupData = {
+      email,
+      confirm,
+      password,
+      message: "Exist User Data.",
+    };
+    req.session.save(function () {
+      res.redirect("/signup");
+    });
+    return;
   }
 
   const hashPassword = bcrypt.hashSync(password, hashSalt);
