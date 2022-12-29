@@ -12,36 +12,48 @@ router.get("/", function (req, res) {
 });
 
 router.get("/signup", function (req, res) {
-  let signupData = req.session.signupData;
+  let inputData = req.session.inputData;
 
-  if (!signupData) {
-    signupData = {
+  if (!inputData) {
+    inputData = {
+      isData: false,
       email: "",
       confirm: "",
       password: "",
     };
   }
-  req.session.signupData = null;
+  req.session.inputData = null;
 
-  res.render("signup", { signupData });
+  res.render("signup", { inputData });
 });
 
 router.get("/login", function (req, res) {
-  res.render("login");
+  let inputData = req.session.inputData;
+
+  if (!inputData) {
+    inputData = {
+      isData: false,
+      email: "",
+      password: "",
+    };
+  }
+  req.session.inputData = null;
+  res.render("login", { inputData });
 });
 
 router.post("/signup", async function (req, res) {
   const { email, "confirm-email": confirm, password } = req.body;
 
   if (!email || !confirm || !password || email !== confirm) {
-    req.session.signupData = {
+    req.session.inputData = {
+      isData: true,
       email,
       confirm,
       password,
       message: "Check your input data.",
     };
     req.session.save(function () {
-      res.redirect("/signup");
+      res.redirect("/signup", { inputData });
     });
     return;
   }
@@ -50,7 +62,8 @@ router.post("/signup", async function (req, res) {
 
   if (existUser) {
     console.log("Exist User");
-    req.session.signupData = {
+    req.session.inputData = {
+      isData: true,
       email,
       confirm,
       password,
@@ -79,11 +92,29 @@ router.post("/login", async function (req, res) {
   const user = await db.getDb().collection("users").findOne({ email });
 
   if (!user) {
-    return res.redirect("/login");
+    req.session.inputData = {
+      isData: true,
+      email,
+      password,
+      message: "Check ID/PW.",
+    };
+    req.session.save(function () {
+      res.redirect("/login");
+    });
+    return;
   }
   const compare = bcrypt.compareSync(password, user.password);
   if (!compare) {
-    return res.redirect("/login");
+    req.session.inputData = {
+      isData: true,
+      email,
+      password,
+      message: "Check ID/PW.",
+    };
+    req.session.save(function () {
+      res.redirect("/login");
+    });
+    return;
   }
   req.session.user = { id: user._id, email: user.email };
   req.session.save(function () {
