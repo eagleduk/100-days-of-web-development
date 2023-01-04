@@ -19,3 +19,8 @@ Udemy
      - Cross Site Request Forgery (사이트간 요청 위조)
      - 수행해서는 안되는 작업을 유발하는 요청을 백앤드로 보내는 공격
      - 공식 페이지와 비슷한 모습의 위조 페이지로 사용자의 입력과 다른 값으로 요청을 보냄
+
+511. 'Same-Site' 쿠키로 부분 CSRF 보호하기
+
+     - [참조](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite)
+     - [참조2](https://seob.dev/posts/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EC%BF%A0%ED%82%A4%EC%99%80-SameSite-%EC%86%8D%EC%84%B1/)
