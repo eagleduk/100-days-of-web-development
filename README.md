@@ -71,3 +71,5 @@ Udemy
 
      - 정적으로 제공되어서는 안되는 폴더를 제공
      - 방문자에게 원시 오류 메세지 전송
+
+- 퀴즈 23:Learning Check: Security
