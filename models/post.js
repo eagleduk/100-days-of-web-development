@@ -5,13 +5,28 @@ const db = require("../data/database");
 const ObjectId = mongodb.ObjectId;
 
 class Post {
+  // 필수 값이 아닌 매개변수를 뒤로 배정한다.
   constructor(title, content, id) {
-    // 필수 값이 아닌 매개변수를 뒤로 배정한다.
     this.title = title;
     this.content = content;
     if (id) {
       this.id = new ObjectId(id);
     }
+  }
+
+  static async fetchAll() {
+    const result = await db.getDb().collection("posts").find().toArray();
+    return result;
+  }
+
+  async fetch() {
+    const result = await db
+      .getDb()
+      .collection("posts")
+      .findOne({ _id: this.id });
+
+    this.title = result.title;
+    this.content = result.content;
   }
 
   async save() {
@@ -44,7 +59,12 @@ class Post {
     return result;
   }
 
-  async delete() {
+  async delete1() {
+    if (!this.id) {
+      console.log("not id");
+      return;
+    }
+    console.log("FEFE");
     const result = await db
       .getDb()
       .collection("posts")
@@ -52,7 +72,7 @@ class Post {
     return result;
   }
 
-  async delete(id) {
+  async delete2(id) {
     const postId = new ObjectId(id);
     const result = await db
       .getDb()

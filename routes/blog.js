@@ -15,7 +15,8 @@ router.get("/admin", async function (req, res) {
     return res.status(401).render("401");
   }
 
-  const posts = await new Post().find();
+  // const posts = await new Post().find();
+  const posts = await Post.fetchAll();
 
   let sessionInputData = req.session.inputData;
 
@@ -64,9 +65,11 @@ router.post("/posts", async function (req, res) {
 });
 
 router.get("/posts/:id/edit", async function (req, res) {
-  const post = await new Post().view(req.params.id);
+  // const post = await new Post().view(req.params.id);
+  const post = new Post(null, null, req.params.id);
+  await post.fetch();
 
-  if (!post) {
+  if (!post.title || !post.content) {
     return res.render("404"); // 404.ejs is missing at this point - it will be added later!
   }
 
@@ -119,9 +122,9 @@ router.post("/posts/:id/edit", async function (req, res) {
 
 router.post("/posts/:id/delete", async function (req, res) {
   const post = new Post(null, null, req.params.id);
-  await post.delete();
+  await post.delete1();
 
-  // const post = new Post().delete(req.params.id);
+  // const post = new Post().delete2(req.params.id);
 
   res.redirect("/admin");
 });
