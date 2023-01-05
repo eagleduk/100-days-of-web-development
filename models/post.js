@@ -61,10 +61,8 @@ class Post {
 
   async delete1() {
     if (!this.id) {
-      console.log("not id");
       return;
     }
-    console.log("FEFE");
     const result = await db
       .getDb()
       .collection("posts")
