@@ -10,6 +10,7 @@ const sessionConfig = require("./config/sessionConfig");
 
 const authRouts = require("./routes/auth");
 const blogRoutes = require("./routes/blog");
+const authMiddleWare = require("./middlewares/auth-middleware");
 
 const app = express();
 
@@ -24,18 +25,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(session(sessionConfig.createSession(sessionStore)));
 app.use(csrf());
 
-app.use(async function (req, res, next) {
-  const user = req.session.user;
-  const isAuth = req.session.isAuthenticated;
-
-  if (!user || !isAuth) {
-    return next();
-  }
-
-  res.locals.isAuth = isAuth;
-
-  next();
-});
+app.use(authMiddleWare);
 
 app.use(blogRoutes);
 app.use(authRouts);
