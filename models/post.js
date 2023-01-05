@@ -9,14 +9,27 @@ class Post {
     // 필수 값이 아닌 매개변수를 뒤로 배정한다.
     this.title = title;
     this.content = content;
-    this.id = id;
+    if (id) {
+      this.id = new ObjectId(id);
+    }
   }
 
   async save() {
-    const result = await db.getDb().collection("posts").insertOne({
-      title: this.title,
-      content: this.content,
-    });
+    let result;
+    if (this.id) {
+      result = await db
+        .getDb()
+        .collection("posts")
+        .updateOne(
+          { _id: this.id },
+          { $set: { title: this.title, content: this.content } }
+        );
+    } else {
+      result = await db.getDb().collection("posts").insertOne({
+        title: this.title,
+        content: this.content,
+      });
+    }
     return result;
   }
 
@@ -28,6 +41,14 @@ class Post {
         { _id: this.id },
         { $set: { title: this.title, content: this.content } }
       );
+    return result;
+  }
+
+  async delete() {
+    const result = await db
+      .getDb()
+      .collection("posts")
+      .deleteOne({ _id: this.id });
     return result;
   }
 
