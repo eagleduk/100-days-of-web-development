@@ -10,7 +10,9 @@ const sessionConfig = require("./config/sessionConfig");
 
 const authRouts = require("./routes/auth");
 const blogRoutes = require("./routes/blog");
-const authMiddleWare = require("./middlewares/auth-middleware");
+
+const csrfMiddleware = require("./middlewares/csrf-token-middleware");
+const authMiddleware = require("./middlewares/auth-middleware");
 
 const app = express();
 
@@ -25,7 +27,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(session(sessionConfig.createSession(sessionStore)));
 app.use(csrf());
 
-app.use(authMiddleWare);
+app.use(csrfMiddleware);
+app.use(authMiddleware);
 
 app.use(blogRoutes);
 app.use(authRouts);
