@@ -53,7 +53,12 @@ async function createPost(req, res) {
 
 async function getSinglePost(req, res) {
   // const post = await new Post().view(req.params.id);
-  const post = new Post(null, null, req.params.id);
+  let post;
+  try {
+    post = new Post(null, null, req.params.id);
+  } catch (error) {
+    return res.render("404");
+  }
   await post.fetch();
 
   if (!post.title || !post.content) {
