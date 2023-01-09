@@ -30,8 +30,8 @@ app.use(csrf());
 app.use(csrfMiddleware);
 app.use(authMiddleware);
 
-app.use(blogRoutes);
 app.use(authRouts);
+app.use(blogRoutes);
 
 app.use(function (error, req, res, next) {
   res.render("500");

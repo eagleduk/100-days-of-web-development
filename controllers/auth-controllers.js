@@ -133,10 +133,15 @@ function postLogout(req, res) {
   res.redirect("/");
 }
 
+function get401(req, res) {
+  return res.status(401).render("401");
+}
+
 module.exports = {
   getSingup,
   getLogin,
   postSignup,
   postLogin,
   postLogout,
+  get401,
 };

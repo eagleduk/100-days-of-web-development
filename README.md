@@ -58,3 +58,27 @@ Udemy
 
 
     - 비동기식을 이용한 저장된 데이터 베이스에서 데이터를 가져올 때 에러가 발생하면 express 에러에 도달하지 못하고 중간에서 끊긴다. 따라서 Promise 에서 에러 처리를 해준다.
+
+535. 사용자 지정 미들웨어로 경로 보호
+
+- 라우터 전체에 미들웨어를 추가 하고 싶으면 `express` 자체에 추가
+
+```javascript
+const app = express();
+app.use([AllMiddleware]);
+```
+
+- 원하는 라우터에 추가하고 싶으면 `get` , `post` 함수에 추가
+
+```javascript
+app.get("/", [Middleware], function (req, res, next) {});
+app.post("/", [Middleware], function (req, res, next) {});
+```
+
+- 원하는 라우터 그룹에 추가하고 싶으면 라우터 자체에 추가
+
+```javascript
+router.use([GroupMiddleware]); // 이후의 라우터 전체에 'GroupMiddleware' 미들웨어가 추가된다.
+router.get("/", function (req, res, next) {});
+router.post("/", function (req, res, next) {});
+```
