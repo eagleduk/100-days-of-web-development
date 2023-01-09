@@ -22,4 +22,13 @@ function flashErrorsToSession(req, data, action) {
   req.session.save(action);
 }
 
-module.exports = { getSessionErrorData, flashErrorsToSession };
+function isAuthenticatedUser(req, isAuthenticated, user) {
+  req.session.user = user;
+  req.session.isAuthenticated = isAuthenticated;
+}
+
+module.exports = {
+  getSessionErrorData,
+  flashErrorsToSession,
+  isAuthenticatedUser,
+};
