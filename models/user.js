@@ -13,6 +13,19 @@ class User {
     return result;
   }
 
+  async exist() {
+    const result = await db
+      .getDb()
+      .collection("users")
+      .findOne({ email: this.email });
+    return result;
+  }
+
+  async compare(existPassword) {
+    const result = await bcrypt.compare(this.password, existPassword);
+    return result;
+  }
+
   async save() {
     const hashedPassword = await bcrypt.hash(this.password, 12);
     await db.getDb().collection("users").insertOne({

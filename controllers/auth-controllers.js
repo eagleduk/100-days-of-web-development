@@ -54,7 +54,8 @@ async function postSignup(req, res) {
     return;
   }
 
-  const existingUser = await User.find(enteredEmail);
+  const user = new User(enteredEmail, enteredPassword);
+  const existingUser = await user.exist();
 
   if (existingUser) {
     vaildationSession.flashErrorsToSession(
@@ -72,7 +73,6 @@ async function postSignup(req, res) {
     return;
   }
 
-  const user = new User(enteredEmail, enteredPassword);
   await user.save();
 
   res.redirect("/login");
@@ -83,7 +83,8 @@ async function postLogin(req, res) {
   const enteredEmail = userData.email;
   const enteredPassword = userData.password;
 
-  const existingUser = await User.find(enteredEmail);
+  const user = new User(enteredEmail, enteredPassword);
+  const existingUser = await user.exist();
 
   if (!existingUser) {
     vaildationSession.flashErrorsToSession(
@@ -100,10 +101,7 @@ async function postLogin(req, res) {
     return;
   }
 
-  const passwordsAreEqual = await bcrypt.compare(
-    enteredPassword,
-    existingUser.password
-  );
+  const passwordsAreEqual = await user.compare(existingUser.password);
 
   if (!passwordsAreEqual) {
     vaildationSession.flashErrorsToSession(
