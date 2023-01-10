@@ -39,3 +39,18 @@ Orders: User data, Product | Cart data, date, status
 
 538. 여러분의 챌린지!
 539. 과정 프로젝트 설정
+
+     - node init
+     - express
+     - nodemon
+
+540. 폴더, 파일 및 첫번째 경로 만들기
+
+     - 회원가입
+     - 로그인
+
+541. EJS & 첫 번째 보기 추가
+542. 첫 번째 보기 채우기 & 렌더링
+543. 기본 CSS 파일 & 정적 파일 추가
+544. CSS 변수 추가 & 웹사이트 테마
+545. 웹사이트를 위한 더 많은 기본 CSS 스타일
