@@ -1,4 +1,7 @@
 <%- include('meta/meta', {title: "Sign Up" }) %>
+    <link rel="stylesheet" href="/static/styles/forms.css">
+    <link rel="stylesheet" href="/static/styles/auth.css">
+
     </head>
 
     <body>
@@ -37,10 +40,13 @@
                     </p>
 
                     <button class="btn">Create Account</button>
+
+                    <p>
+                        <a href="/login">
+                            Login instead
+                        </a>
+                    </p>
                 </form>
 
-                <a href="/login">
-                    Login instead
-                </a>
             </main>
             <%- include('layouts/footer', {title: "Sign Up" }) %>
