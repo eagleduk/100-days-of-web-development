@@ -56,5 +56,16 @@ Orders: User data, Product | Cart data, date, status
 545. 웹사이트를 위한 더 많은 기본 CSS 스타일
 
      - bcryptjs
+     - mongodb
 
 546. 첫 번째 양식 요소 스타일링
+547. 몽고DB 데이터베이스 서버 및 연결 추가
+548. 사용자 가입 추가
+549. 보안 시간: CSRF 보호 추가
+550. 오류 처리 미들웨어로 적절한 오류 처리 구현
+551. 세션 소개 & 세션 구성
+552. 인증 & 사용자 로그인 구현
+553. 인증 완료 & 인증 상태 확인
+
+     - express-mongodb-session
+     - express-session

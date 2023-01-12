@@ -1,17 +1,19 @@
 const express = require("express");
 
+const publicController = require("../controllers/public.controller");
+
 const router = express.Router();
 
-router.get("/", function (req, res) {
-  return res.send("<h1>Hello! world</h1>");
-});
+router.get("/efjei", function (req, res) {});
 
-router.get("/signup", function (req, res) {
-  res.render("signup");
-});
+router.get("/", publicController.getHome);
 
-router.post("/signup", function (req, res) {
-  console.log(req.body);
-});
+router.get("/signup", publicController.getSignup);
+
+router.post("/signup", publicController.signup);
+
+router.get("/login", publicController.getLogin);
+
+router.post("/login", publicController.login);
 
 module.exports = router;
