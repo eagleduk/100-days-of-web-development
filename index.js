@@ -8,6 +8,7 @@ const { connectToDatabase } = require("./data/database");
 const publicRouter = require("./routers/public.router");
 const errorHandler = require("./middlewares/error.middleware");
 const createCsrfToken = require("./middlewares/csrf.middleware");
+const loginCheckMiddleware = require("./middlewares/auth.middleware");
 
 const app = express();
 const port = 3000;
@@ -24,6 +25,12 @@ app.use(expressSession(sessionStoreConfig()));
 app.use(csurf());
 
 app.use(createCsrfToken);
+app.use(loginCheckMiddleware);
+
+app.use((req, res, next) => {
+  console.log(res.locals);
+  next();
+});
 
 app.use(publicRouter);
 

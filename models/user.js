@@ -23,6 +23,17 @@ class User {
       name: this.name,
     });
   }
+  async exist() {
+    const result = await getDb()
+      .collection("users")
+      .findOne({ email: this.email });
+    return result;
+  }
+
+  async compare(password) {
+    const result = await bcryptjs.compare(this.password, password);
+    return result;
+  }
 }
 
 module.exports = User;

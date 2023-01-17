@@ -2,5 +2,11 @@
     <a href="/">
         WDE
     </a>
-    <nav></nav>
+    <nav>
+        <% if(locals.isLogin) { %>
+            <a href="/logout">
+                logout
+            </a>
+            <%} %>
+    </nav>
 </header>
