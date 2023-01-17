@@ -16,6 +16,8 @@ app.set("view engine", "ejs"); // 사용할 view engine 설정
 app.set("views", "./views"); // view engine base path 설정
 
 app.use("/static", express.static("public"));
+
+// app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use(expressSession(sessionStoreConfig()));

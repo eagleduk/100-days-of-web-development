@@ -1,5 +1,6 @@
 function createCsrfToken(req, res, next) {
-  res.locals.csrf = req.csrfToken();
+  const token = req.csrfToken();
+  res.locals.csrf = token;
   next();
 }
 
