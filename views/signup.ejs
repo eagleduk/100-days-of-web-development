@@ -8,14 +8,18 @@
         <%- include('layouts/header') %>
             <main>
                 <form method="POST">
+                    <input type="hidden" name="_csrf" id="_csrf" value="<%= locals.csrf %>">
                     <h1>Create New Account</h1>
                     <p>
+                        <%= inputData?.message %>
+                    </p>
+                    <p>
                         <label for="email">E-Mail</label>
-                        <input type="email" name="email" id="email" required />
+                        <input type="email" name="email" id="email" value="<%= inputData?.email %>" required />
                     </p>
                     <p>
                         <label for="cEmail">Confirm Mail</label>
-                        <input type="email" name="cEmail" id="cEmail" required />
+                        <input type="email" name="cEmail" id="cEmail" value="<%= inputData?.cEmail %>" required />
                     </p>
                     <p>
                         <label for="password">Password</label>
@@ -24,19 +28,20 @@
                     <hr>
                     <p>
                         <label for="name">Full Name</label>
-                        <input type="name" name="name" id="name" required />
+                        <input type="name" name="name" id="name" value="<%= inputData?.name %>" required />
                     </p>
                     <p>
                         <label for="street">Street</label>
-                        <input type="street" name="street" id="street" required />
+                        <input type="street" name="street" id="street" value="<%= inputData?.street %>" required />
                     </p>
                     <p>
                         <label for="postalCode">Postal Code</label>
-                        <input type="postalCode" name="postalCode" id="postalCode" required />
+                        <input type="postalCode" name="postalCode" id="postalCode" value="<%= inputData?.postalCode %>"
+                            required />
                     </p>
                     <p>
                         <label for="city">City</label>
-                        <input type="city" name="city" id="city" required />
+                        <input type="city" name="city" id="city" value="<%= inputData?.city %>" required />
                     </p>
 
                     <button class="btn">Create Account</button>

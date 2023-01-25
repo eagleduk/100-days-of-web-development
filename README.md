@@ -69,3 +69,8 @@ Orders: User data, Product | Cart data, date, status
 
      - express-mongodb-session
      - express-session
+
+554. 로그아웃 기능 추가
+555. 비동기 코드의 오류 처리
+556. 사용자 입력 검증 추가
+557. 플래싱 오류 & 세션에 데이터 입력
