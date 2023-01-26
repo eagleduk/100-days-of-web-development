@@ -1,26 +1,21 @@
-<header>
-    <a href="/">
-        WDE
-    </a>
+<header id="header-navigation">
+    <div class="logo">
+        <a href="/">
+            WDE
+        </a>
+    </div>
     <nav>
-        <ul>
-            <% if(!locals.isLogin) { %>
-                <li>
-                    <a href="/login">login</a>
-                </li>
-                <li>
-                    <a href="/signup">signup</a>
-                </li>
-                <% } else if(locals.isLogin) { %>
-                    <li>
-                        <form action="/logout" method="POST">
-                            <input type="hidden" name="_csrf" id="_csrf" value="<%= locals.csrf %>">
-                            <button>
-                                logout
-                            </button>
-                        </form>
-                    </li>
-                    <%} %>
-        </ul>
+        <%- include('./navigations') %>
     </nav>
+    <div id="burger-button">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 </header>
+
+<aside id="mobile-navigation">
+    <nav>
+        <%- include('./navigations') %>
+    </nav>
+</aside>

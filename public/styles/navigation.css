@@ -1,0 +1,123 @@
+#header-navigation {
+  width: 90%;
+  height: 80px;
+  position: sticky;
+  top: 0;
+  left: 5%;
+  display: flex;
+  padding: 0 var(--space-4);
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--color-primary-400);
+}
+
+#header-navigation .logo {
+  font-size: 2.35rem;
+  font-weight: bold;
+}
+
+#header-navigation nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#header-navigation nav ul li a {
+  display: block;
+  margin: var(--space-2);
+  padding: var(--space-4) var(--space-2);
+  border-radius: var(--border-radius-small);
+  font-size: 1.2rem;
+}
+
+#header-navigation nav ul li a:hover {
+  background-color: var(--color-gray-300);
+}
+
+#header-navigation #burger-button {
+  width: 50px;
+  margin: var(--space-2) 0;
+  cursor: pointer;
+  display: none;
+}
+
+#header-navigation #burger-button span {
+  width: 100%;
+  height: 5px;
+  background-color: var(--color-gray-100);
+  display: block;
+  margin: var(--space-2) 0;
+}
+
+#mobile-navigation {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: calc(100vh - 80px);
+  background-color: var(--color-gray-500);
+}
+
+#mobile-navigation.open {
+  display: block;
+}
+
+#mobile-navigation nav {
+  margin: 0 auto;
+  width: 80%;
+  height: 100%;
+}
+
+#mobile-navigation nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 30%;
+}
+
+#mobile-navigation nav ul li {
+  display: block;
+  width: 100%;
+}
+
+#mobile-navigation nav ul li a,
+#mobile-navigation nav ul li form {
+  width: 30%;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  padding: var(--space-4) 0;
+  border-radius: var(--border-radius-small);
+  font-size: 1.2rem;
+}
+
+#mobile-navigation nav ul li a:hover {
+  background-color: var(--color-gray-300);
+}
+
+#header-navigation button,
+#mobile-navigation button {
+  font-family: inherit;
+  font-size: 1.2rem;
+  padding: var(--space-4) var(--space-2);
+  color: var(--color-primary-400);
+  border-radius: var(--border-radius-small);
+  border-width: 0;
+  background-color: var(--color-gray-500);
+  cursor: pointer;
+}
+
+#header-navigation button:hover,
+#mobile-navigation button:hover {
+  background-color: var(--color-gray-300);
+}
+
+@media (max-width: 48rem) {
+  #header-navigation nav {
+    display: none;
+  }
+  #header-navigation #burger-button {
+    display: block;
+  }
+}

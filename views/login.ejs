@@ -7,28 +7,32 @@
     <body>
         <%- include('layouts/header') %>
             <main>
-                <form method="POST">
-                    <input type="hidden" name="_csrf" id="_csrf" value="<%= locals.csrf %>">
-                    <h1>Login</h1>
-                    <p>
-                        <%= inputData?.message %>
-                    </p>
-                    <p>
-                        <label for="email">E-Mail</label>
-                        <input type="email" name="email" id="email" value="<%= inputData?.email %>" required />
-                    </p>
-                    <p>
-                        <label for="password">Password</label>
-                        <input type="password" name="password" id="password" required />
-                    </p>
-                    <button class="btn">Login</button>
+                <h1>Login</h1>
+                <% if(inputData.message) { %>
+                    <section class="alert">
+                        <h2>
+                            <%= inputData.message %>
+                        </h2>
+                    </section>
+                    <% } %>
+                        <form method="POST">
+                            <input type="hidden" name="_csrf" id="_csrf" value="<%= locals.csrf %>">
+                            <p>
+                                <label for="email">E-Mail</label>
+                                <input type="email" name="email" id="email" value="<%= inputData?.email %>" required />
+                            </p>
+                            <p>
+                                <label for="password">Password</label>
+                                <input type="password" name="password" id="password" required />
+                            </p>
+                            <button class="btn">Login</button>
 
-                    <p>
-                        <a href="/signup">
-                            Create New Account
-                        </a>
-                    </p>
-                </form>
+                            <p>
+                                <a href="/signup">
+                                    Create New Account
+                                </a>
+                            </p>
+                        </form>
 
             </main>
             <%- include('layouts/footer', {title: "Sign Up" }) %>
