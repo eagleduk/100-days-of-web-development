@@ -117,6 +117,7 @@
   #header-navigation nav {
     display: none;
   }
+
   #header-navigation #burger-button {
     display: block;
   }

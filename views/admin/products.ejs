@@ -1,0 +1,23 @@
+<%- include('../meta/meta', {title: "Sign Up" }) %>
+
+    </head>
+
+    <body>
+        <%- include('../layouts/header') %>
+            <main>
+                <h1>Product Administration</h1>
+                <section>
+                    <h2>Manage Products</h2>
+                    <p>
+                        <a href="/admin/product/" class="btn">
+                            Add Product
+                        </a>
+                    </p>
+                </section>
+                <section>
+                    <% products.forEach((product)=> { %>
+                        <%- include("item", {product}) %>
+                            <% }) %>
+                </section>
+            </main>
+            <%- include('../layouts/footer', {title: "Sign Up" }) %>
