@@ -1,0 +1,24 @@
+<%- include('../meta/meta', {title: "Add Product" }) %>
+    <link rel="stylesheet" href="/static/styles/forms.css">
+
+    </head>
+
+    <body>
+        <%- include('../layouts/header') %>
+            <main>
+                <h1>
+                    Add Product
+                </h1>
+
+                <form action="/admin/product" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="_csrf" id="_csrf" value="<%= locals.csrf %>">
+
+                    <%- include("product-info", { product: null }) %>
+
+                        <section>
+                            <button type="reset" class="btn btn-alt">Reset</button>
+                            <button class="btn">Save</button>
+                        </section>
+                </form>
+            </main>
+            <%- include('../layouts/footer', {title: "Sign Up" }) %>

@@ -89,6 +89,17 @@ a {
   background-color: var(--color-primary-500-bg);
 }
 
+.btn-del {
+  background-color: var(--color-error-100);
+  color: var(--color-error-500);
+}
+
+.btn-del:hover,
+.btn-del:active {
+  background-color: var(--color-error-500);
+  color: var(--color-error-100);
+}
+
 .alert {
   background-color: var(--color-error-100);
   color: var(--color-error-500);

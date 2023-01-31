@@ -1,4 +1,6 @@
-<%- include('../meta/meta', {title: "Sign Up" }) %>
+<%- include('../meta/meta', {title: "Manage Products" }) %>
+
+    <link rel="stylesheet" href="/static/styles/products.css">
 
     </head>
 
@@ -14,10 +16,15 @@
                         </a>
                     </p>
                 </section>
+
                 <section>
-                    <% products.forEach((product)=> { %>
-                        <%- include("item", {product}) %>
+                    <ul class="products-item">
+                        <% products.forEach((product)=> { %>
+                            <li class="product-item">
+                                <%- include("product-item", {product}) %>
+                            </li>
                             <% }) %>
+                    </ul>
                 </section>
             </main>
             <%- include('../layouts/footer', {title: "Sign Up" }) %>

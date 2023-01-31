@@ -1,4 +1,4 @@
-const User = require("../models/user");
+const User = require("../models/user.model");
 const { setSessionUser, setInputData } = require("../util/session.util");
 const { signupValidate } = require("../util/validate.util");
 

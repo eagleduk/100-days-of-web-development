@@ -1,3 +1,4 @@
+const { ObjectId } = require("mongodb");
 const { getDb } = require("../data/database");
 
 class Product {
@@ -9,12 +10,20 @@ class Product {
     this.filename = filename;
   }
 
-  async save() {
-    await getDb().collection("products").insertOne(this);
-  }
-
   static async find() {
     return await getDb().collection("products").find().toArray();
+  }
+
+  static async findById(id) {
+    const objectId = new ObjectId(id);
+    const product = await getDb()
+      .collection("products")
+      .findOne({ _id: objectId });
+    return product;
+  }
+
+  async save() {
+    await getDb().collection("products").insertOne(this);
   }
 }
 
