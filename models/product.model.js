@@ -7,7 +7,7 @@ class Product {
     this.summary = summary;
     this.price = price;
     this.description = description;
-    this.filename = filename;
+    if (filename) this.filename = filename;
   }
 
   static async find() {
@@ -24,6 +24,18 @@ class Product {
 
   async save() {
     await getDb().collection("products").insertOne(this);
+  }
+
+  async update(id) {
+    const objectId = new ObjectId(id);
+    await getDb()
+      .collection("products")
+      .updateOne({ _id: objectId }, { $set: this });
+  }
+
+  static async delete(id) {
+    const objectId = new ObjectId(id);
+    await getDb().collection("products").deleteOne({ _id: objectId });
   }
 }
 

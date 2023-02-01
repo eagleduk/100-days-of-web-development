@@ -88,3 +88,4 @@ Orders: User data, Product | Cart data, date, status
 566. 제품 항목 가져오기 & 출력
 567. 제품 아이템 스타일링
 568. "제품 세부 정보"(단일 제품) 페이지 추가
+569. 제품 업데이트(관리자로)

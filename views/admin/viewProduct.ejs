@@ -1,6 +1,8 @@
 <%- include('../meta/meta', {title: "View Product" }) %>
     <link rel="stylesheet" href="/static/styles/forms.css">
 
+    <script src="/static/scripts/product.management.js" defer></script>
+
     </head>
 
     <body>
@@ -10,7 +12,7 @@
                     View Product
                 </h1>
 
-                <form action="/admin/product" method="POST" enctype="multipart/form-data">
+                <form action="" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="_csrf" id="_csrf" value="<%= locals.csrf %>">
 
                     <%- include("product-info", { product: product }) %>
@@ -18,10 +20,11 @@
                         <section>
                             <div>
                                 <a href="/admin/products" class="btn btn-alt">Cancel</a>
-                                <button class="btn">Save</button>
+                                <button class="btn">Update</button>
                             </div>
                             <div>
-                                <button class="btn btn-del">Delete</button>
+                                <button type="button" id="product-delete" class="btn btn-del"
+                                    data-product-id="<%= product._id %>" data-csrf="<%= locals.csrf %>">Delete</button>
                             </div>
                         </section>
                 </form>
