@@ -6,6 +6,14 @@ const router = express.Router();
 
 router.get("/", publicController.getHome);
 
+router.get("/401", function (req, res) {
+  return res.render("401.ejs");
+});
+
+router.get("/403", function (req, res) {
+  return res.render("403.ejs");
+});
+
 router.get("/signup", publicController.getSignup);
 
 router.post("/signup", publicController.signup);

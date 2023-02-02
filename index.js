@@ -12,6 +12,7 @@ const adminRouter = require("./routers/admin.router");
 const errorHandler = require("./middlewares/error.middleware");
 const createCsrfToken = require("./middlewares/csrf.middleware");
 const loginCheckMiddleware = require("./middlewares/auth.middleware");
+const protectMiddleware = require("./middlewares/protect.middleware");
 
 const app = express();
 const port = 3000;
@@ -40,6 +41,7 @@ app.use((req, res, next) => {
 });
 
 app.use(publicRouter);
+app.use(protectMiddleware);
 app.use("/admin", adminRouter);
 
 app.use(errorHandler);

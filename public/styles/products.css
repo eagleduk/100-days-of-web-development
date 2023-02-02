@@ -22,3 +22,25 @@
 .product-item a {
   color: inherit;
 }
+
+.product-image {
+  display: flex;
+  width: 90%;
+  padding: var(--space-4) 0;
+  height: 10rem;
+}
+
+.product-image p:first-child {
+  flex-basis: 80%;
+}
+
+.product-image p:last-child {
+  flex-basis: 20%;
+}
+
+.product-image img {
+  width: 100%;
+  height: 5rem;
+  object-fit: cover;
+  display: none;
+}
