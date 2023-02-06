@@ -1,0 +1,30 @@
+<%- include('../meta/meta', {title: "View Product" }) %>
+    <link rel="stylesheet" href="/static/styles/products.css">
+
+    </head>
+
+    <body>
+        <%- include('../layouts/header') %>
+            <main>
+
+                <header class="product-view-header">
+                    <img src="/images/<%= product.filename %>" alt="<%= product.title %> ">
+                    <div>
+                        <h1>
+                            <%= product?.title %>
+                        </h1>
+
+                        <h4>
+                            <%= product?.price %>
+                        </h4>
+
+                        <button class="btn">Add Cart</button>
+                    </div>
+                </header>
+
+                <p>
+                    <%= product?.description %>
+                </p>
+
+            </main>
+            <%- include('../layouts/footer', {title: "Sign Up" }) %>

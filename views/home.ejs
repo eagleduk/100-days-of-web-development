@@ -1,11 +1,19 @@
-<%- include('meta/meta', {title: "Sign Up" }) %>
+<%- include('meta/meta', {title: "WDE" }) %>
 
+    <link rel="stylesheet" href="/static/styles/products.css">
     </head>
 
     <body>
         <%- include('layouts/header') %>
             <main>
-                <h1>Hello world!</h1>
-
+                <section>
+                    <ul class="products-item">
+                        <% products.forEach((product)=> { %>
+                            <li class="product-item">
+                                <%- include("./product/product-item", {product}) %>
+                            </li>
+                            <% }) %>
+                    </ul>
+                </section>
             </main>
             <%- include('layouts/footer', {title: "Sign Up" }) %>

@@ -40,7 +40,46 @@
 
 .product-image img {
   width: 100%;
-  height: 5rem;
+  height: 15rem;
   object-fit: cover;
   display: none;
+}
+
+.product-view-header {
+  height: 15rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-view-header img {
+  width: 100%;
+  height: 15rem;
+  object-fit: cover;
+  padding: 0 var(--space-8);
+  margin: auto 0;
+}
+
+.product-view-header div {
+  width: 100%;
+  padding: 0 var(--space-8);
+  margin: 0 auto;
+}
+
+main p {
+  padding: 0 var(--space-8);
+}
+
+@media (max-width: 48rem) {
+  .product-view-header {
+    display: block;
+  }
+
+  .product-view-header img {
+    width: 100%;
+    height: 6rem;
+  }
+
+  main p {
+    margin: var(--space-8) 0;
+  }
 }

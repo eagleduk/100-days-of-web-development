@@ -7,6 +7,7 @@ const sessionStoreConfig = require("./config/session");
 const { connectToDatabase } = require("./data/database");
 
 const publicRouter = require("./routers/public.router");
+const productRouter = require("./routers/product.router");
 const adminRouter = require("./routers/admin.router");
 
 const errorHandler = require("./middlewares/error.middleware");
@@ -41,6 +42,7 @@ app.use((req, res, next) => {
 });
 
 app.use(publicRouter);
+app.use("/product", productRouter);
 app.use(protectMiddleware);
 app.use("/admin", adminRouter);
 

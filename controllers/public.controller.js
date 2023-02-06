@@ -1,9 +1,12 @@
 const User = require("../models/user.model");
+const Product = require("../models/product.model");
+
 const { setSessionUser, setInputData } = require("../util/session.util");
 const { signupValidate } = require("../util/validate.util");
 
-function getHome(req, res) {
-  return res.render("home");
+async function getHome(req, res) {
+  const products = await Product.find();
+  return res.render("home", { products });
 }
 
 function getSignup(req, res) {
