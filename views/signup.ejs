@@ -1,11 +1,11 @@
-<%- include('meta/meta', {title: "Sign Up" }) %>
+<%- include("meta/meta", {title: "Sign Up" }) %>
     <link rel="stylesheet" href="/static/styles/forms.css">
     <link rel="stylesheet" href="/static/styles/auth.css">
 
     </head>
 
     <body>
-        <%- include('layouts/header') %>
+        <%- include("layouts/header") %>
             <main>
                 <h1>Create New Account</h1>
                 <% if(inputData.message) { %>
@@ -60,4 +60,4 @@
                         </form>
 
             </main>
-            <%- include('layouts/footer', {title: "Sign Up" }) %>
+            <%- include("layouts/footer") %>

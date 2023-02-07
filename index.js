@@ -14,6 +14,7 @@ const errorHandler = require("./middlewares/error.middleware");
 const createCsrfToken = require("./middlewares/csrf.middleware");
 const loginCheckMiddleware = require("./middlewares/auth.middleware");
 const protectMiddleware = require("./middlewares/protect.middleware");
+const cartCheckMiddleware = require("./middlewares/cart.middleware");
 
 const app = express();
 const port = 3000;
@@ -28,6 +29,7 @@ app.use("/images", express.static("uploads"));
 
 // app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 app.use(expressSession(sessionStoreConfig()));
 app.use(upload.single("image"));
@@ -35,6 +37,7 @@ app.use(csurf());
 
 app.use(createCsrfToken);
 app.use(loginCheckMiddleware);
+app.use(cartCheckMiddleware);
 
 app.use((req, res, next) => {
   console.log(res.locals);

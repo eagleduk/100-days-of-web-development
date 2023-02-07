@@ -65,7 +65,7 @@
   margin: 0 auto;
 }
 
-main p {
+main.proudct-view-main p {
   padding: 0 var(--space-8);
 }
 
@@ -79,7 +79,7 @@ main p {
     height: 6rem;
   }
 
-  main p {
+  main.proudct-view-main p {
     margin: var(--space-8) 0;
   }
 }

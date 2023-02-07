@@ -9,11 +9,13 @@ if (productDeleteButtonElement) {
         dataset: { productId, csrf },
       },
     } = e;
-    console.log(productId);
 
     const { result, message } = await (
-      await fetch(`/admin/product/${productId}?_csrf=${csrf}`, {
+      await fetch(`/admin/product/${productId}`, {
         method: "DELETE",
+        headers: {
+          "CSRF-Token": csrf,
+        },
       })
     ).json();
 

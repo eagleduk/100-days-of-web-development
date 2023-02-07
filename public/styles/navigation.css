@@ -17,6 +17,16 @@
   font-weight: bold;
 }
 
+#header-navigation nav span {
+  display: block;
+  background-color: var(--color-primary-400);
+  width: 2rem;
+  color: var(--color-gray-50);
+  text-align: center;
+  border-radius: 10px;
+  margin-left: 6px;
+}
+
 #header-navigation nav ul {
   display: flex;
   flex-direction: row;
@@ -25,7 +35,7 @@
 }
 
 #header-navigation nav ul li a {
-  display: block;
+  display: flex;
   margin: var(--space-2);
   padding: var(--space-4) var(--space-2);
   border-radius: var(--border-radius-small);
