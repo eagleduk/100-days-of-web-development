@@ -1,0 +1,28 @@
+<%- include("../meta/meta", {title: "View Product" }) %>
+    <link rel="stylesheet" href="/static/styles/cart.css">
+
+    </head>
+
+    <body>
+        <%- include("../layouts/header") %>
+            <main class="cart-view-main">
+                <h1>
+                    Your Cart
+                </h1>
+                <% let price=0; %>
+                    <ul class="cart-items">
+                        <% for(const id in locals.carts) { %>
+                            <% price +=+locals.carts[id].price * locals.carts[id].count %>
+                                <li>
+                                    <%- include("cart-item", {item: locals.carts[id]}) %>
+                                </li>
+                                <% } %>
+                    </ul>
+                    <div class="cart-order">
+                        <span>
+                            <%= price %>
+                        </span>
+                        <button class="btn" type="button">Order</button>
+                    </div>
+            </main>
+            <%- include("../layouts/footer") %>

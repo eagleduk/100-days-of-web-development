@@ -18,16 +18,19 @@ async function addCart(req, res, next) {
     let count = res.locals.cartCount;
     const carts = res.locals.carts;
     if (carts && carts[id]) {
+      const product = carts[id];
       req.session.carts = {
         ...carts,
         [id]: {
-          count: carts[id].count + 1,
+          ...product,
+          count: product.count + 1,
         },
       };
     } else {
+      const product = await Product.findById(id);
       req.session.carts = {
         ...carts,
-        [id]: { count },
+        [id]: { ...product, count: 1 },
       };
       count++;
     }

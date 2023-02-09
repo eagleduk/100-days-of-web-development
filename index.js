@@ -9,6 +9,7 @@ const { connectToDatabase } = require("./data/database");
 const publicRouter = require("./routers/public.router");
 const productRouter = require("./routers/product.router");
 const adminRouter = require("./routers/admin.router");
+const cartRouter = require("./routers/cart.router");
 
 const errorHandler = require("./middlewares/error.middleware");
 const createCsrfToken = require("./middlewares/csrf.middleware");
@@ -46,6 +47,7 @@ app.use((req, res, next) => {
 
 app.use(publicRouter);
 app.use("/product", productRouter);
+app.use("/cart", cartRouter);
 app.use(protectMiddleware);
 app.use("/admin", adminRouter);
 

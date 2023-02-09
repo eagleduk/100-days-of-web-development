@@ -1,0 +1,33 @@
+<section class="cart-item">
+    <div class="cart-item-img">
+        <img src="/images/<%= item.filename %>" alt="<%= item.title %> ">
+    </div>
+
+    <div class="cart-item-info">
+        <h2>
+            <%= item.title %>
+        </h2>
+        <p>
+            <%= item.description %>
+        </p>
+    </div>
+
+    <div class="cart-item-management">
+        <div>
+            <button type="button">–</button>
+            <input type="number" min="0" max="99" value="<%= item.count%>" placeholder="" />
+            <button type="button">+</button>
+        </div>
+        <div>
+            <span>
+                ₩ <%= (+item.count) * (+item.price) %>
+                    (₩ <i>
+                        <%= item.price %>
+                    </i>)
+            </span>
+        </div>
+        <div>
+            <button class="btn btn-del" type="button">delete</button>
+        </div>
+    </div>
+</section>
