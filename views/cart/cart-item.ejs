@@ -12,19 +12,26 @@
         </p>
     </div>
 
-    <div class="cart-item-management">
+    <div class="cart-item-management" data-csrf="<%= locals.csrf %>" data-id="<%= item._id %>">
         <div>
             <button type="button">–</button>
             <input type="number" min="0" max="99" value="<%= item.count%>" placeholder="" />
             <button type="button">+</button>
         </div>
+
         <div>
-            <span>
-                ₩ <%= (+item.count) * (+item.price) %>
-                    (₩ <i>
-                        <%= item.price %>
-                    </i>)
-            </span>
+            <strong>
+                ₩<span class="cart-item-totalPrice">
+                    <%= (+item.count) * (+item.price) %>
+                </span>
+            </strong>
+            <br>
+            <em>
+                ( ₩<span>
+                    <%= item.price %>
+                </span>)
+            </em>
+
         </div>
         <div>
             <button class="btn btn-del" type="button">delete</button>

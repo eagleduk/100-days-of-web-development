@@ -1,6 +1,8 @@
 <%- include("../meta/meta", {title: "View Product" }) %>
     <link rel="stylesheet" href="/static/styles/cart.css">
 
+    <script src="/static/scripts/cart.management.js" defer></script>
+
     </head>
 
     <body>
@@ -19,9 +21,14 @@
                                 <% } %>
                     </ul>
                     <div class="cart-order">
-                        <span>
-                            <%= price %>
-                        </span>
+                        <div>
+                            <strong>
+                                Total: ₩
+                            </strong>
+                            <span id="cart-totalPrice">
+                                <%= price %>
+                            </span>
+                        </div>
                         <button class="btn" type="button">Order</button>
                     </div>
             </main>
