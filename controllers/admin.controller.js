@@ -2,11 +2,11 @@ const Product = require("../models/product.model");
 
 async function products(req, res) {
   const products = await Product.find();
-  return res.render("admin/products", { products });
+  return res.render("admin/product/products", { products });
 }
 
 function product(req, res) {
-  return res.render("admin/addProduct");
+  return res.render("admin/product/add");
 }
 
 async function createProduct(req, res, next) {
@@ -29,7 +29,7 @@ async function viewProduct(req, res, next) {
   try {
     const { id } = req.params;
     const product = await Product.findById(id);
-    return res.render("admin/viewProduct", { product: product });
+    return res.render("admin/product/view", { product: product });
   } catch (err) {
     next(err);
   }

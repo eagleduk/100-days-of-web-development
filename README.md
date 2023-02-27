@@ -26,15 +26,15 @@ Udemy
     - Product Detail                                            - All Products
     - Shopping Cart                                             - New Product
     - All Order For Customer                                    - Update Product
-                                                                - All Orders
+                                                                - All Order
 ```
 
 ```
 = Models =
-Users: email, password, isAdmin, address, name
+User: email, password, isAdmin, address, name
 Product: name, summary, price, description, image
 Cart: Items, total price, number of items
-Orders: User data, Product | Cart data, date, status
+Order: User data, Product | Cart data, date, status
 ```
 
 538. 여러분의 챌린지!
@@ -103,3 +103,11 @@ Orders: User data, Product | Cart data, date, status
 581. 장바구니 품목 업데이트(수량 변경)
 582. Ajax 요청을 통한 카트 업데이트(PATCH 요청)
 583. 장바구니 항목 업데이트 후 DOM 업데이트
+584. 자바 스크립트 & 부동 소수점
+585. 주문 컨트롤러 & 기본 주문 모델 추가
+586. 데이터베이스에 주문 저장
+587. 주문 표시(고객 & 관리자용)
+588. 관리자로 주문 관리하기
+589. 장바구니 항목 업데이트 유지
+590. 버그 수정 & 수정
+591. 모듈 요약

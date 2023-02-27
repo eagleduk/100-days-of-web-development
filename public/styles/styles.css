@@ -83,6 +83,11 @@ a {
   border-color: var(--color-primary-700);
 }
 
+.btn:disabled {
+  background-color: var(--color-gray-300);
+  border-color: var(--color-gray-300);
+}
+
 .btn-alt {
   background-color: transparent;
   color: var(--color-primary-500);

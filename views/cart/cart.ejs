@@ -1,4 +1,4 @@
-<%- include("../meta/meta", {title: "View Product" }) %>
+<%- include("../meta/meta", {title: "Your Cart" }) %>
     <link rel="stylesheet" href="/static/styles/cart.css">
 
     <script src="/static/scripts/cart.management.js" defer></script>
@@ -16,7 +16,7 @@
                         <% for(const id in locals.carts) { %>
                             <% price +=+locals.carts[id].price * locals.carts[id].count %>
                                 <li>
-                                    <%- include("cart-item", {item: locals.carts[id]}) %>
+                                    <%- include("item", {item: locals.carts[id]}) %>
                                 </li>
                                 <% } %>
                     </ul>
@@ -29,7 +29,14 @@
                                 <%= price %>
                             </span>
                         </div>
-                        <button class="btn" type="button">Order</button>
+                        <% if(locals.isLogin) { %>
+                            <form action="/order" method="POST">
+                                <input type="hidden" name="_csrf" id="_csrf" value="<%= locals.csrf %>">
+                                <button class="btn">Order</button>
+                            </form>
+                            <% } else { %>
+                                <button class="btn" type="button" disabled>Login First</button>
+                                <% } %>
                     </div>
             </main>
             <%- include("../layouts/footer") %>

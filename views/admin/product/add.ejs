@@ -1,4 +1,4 @@
-<%- include("../meta/meta", {title: "Add Product" }) %>
+<%- include("../../meta/meta", {title: "Add Product" }) %>
     <link rel="stylesheet" href="/static/styles/forms.css">
     <link rel="stylesheet" href="/static/styles/products.css">
 
@@ -7,7 +7,7 @@
     </head>
 
     <body>
-        <%- include("../layouts/header") %>
+        <%- include("../../layouts/header") %>
             <main>
                 <h1>
                     Add Product
@@ -16,7 +16,7 @@
                 <form action="/admin/product" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="_csrf" id="_csrf" value="<%= locals.csrf %>">
 
-                    <%- include("product-info", { product: null }) %>
+                    <%- include("info", { product: null }) %>
 
                         <section>
                             <div>
@@ -26,4 +26,4 @@
                         </section>
                 </form>
             </main>
-            <%- include("../layouts/footer") %>
+            <%- include("../../layouts/footer") %>

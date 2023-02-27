@@ -6,7 +6,7 @@ async function view(req, res, next) {
 
     const product = await Product.findById(id);
 
-    return res.render("product/view", { product });
+    return res.render("product/product", { product });
   } catch (error) {
     next(error);
   }

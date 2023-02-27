@@ -11,12 +11,12 @@
         <% } %>
 
             <% if (locals.isLogin && !locals.isAdmin) { %>
-                <li><a href="/orders">Orders</a></li>
+                <li><a href="/order">Order</a></li>
                 <% } %>
 
                     <% if (locals.isAdmin) { %>
                         <li><a href="/admin/products">Manage Products</a></li>
-                        <li><a href="/admin/orders">Manage Orders</a></li>
+                        <li><a href="/admin/order">Manage Order</a></li>
                         <% } %>
 
                             <% if(!locals.isLogin) { %>

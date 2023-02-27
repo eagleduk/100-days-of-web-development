@@ -1,4 +1,4 @@
-<%- include("../meta/meta", {title: "View Product" }) %>
+<%- include("../../meta/meta", {title: "View Product" }) %>
     <link rel="stylesheet" href="/static/styles/forms.css">
     <link rel="stylesheet" href="/static/styles/products.css">
 
@@ -7,7 +7,7 @@
     </head>
 
     <body>
-        <%- include("../layouts/header") %>
+        <%- include("../../layouts/header") %>
             <main>
                 <h1>
                     View Product
@@ -16,7 +16,7 @@
                 <form action="" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="_csrf" id="_csrf" value="<%= locals.csrf %>">
 
-                    <%- include("product-info", { product: product }) %>
+                    <%- include("info", { product: product }) %>
 
                         <section>
                             <div>
@@ -30,4 +30,4 @@
                         </section>
                 </form>
             </main>
-            <%- include("../layouts/footer") %>
+            <%- include("../../layouts/footer") %>

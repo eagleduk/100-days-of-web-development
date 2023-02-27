@@ -10,12 +10,16 @@ const publicRouter = require("./routers/public.router");
 const productRouter = require("./routers/product.router");
 const adminRouter = require("./routers/admin.router");
 const cartRouter = require("./routers/cart.router");
+const orderRouter = require("./routers/order.router");
 
 const errorHandler = require("./middlewares/error.middleware");
 const createCsrfToken = require("./middlewares/csrf.middleware");
 const loginCheckMiddleware = require("./middlewares/auth.middleware");
 const protectMiddleware = require("./middlewares/protect.middleware");
-const cartCheckMiddleware = require("./middlewares/cart.middleware");
+const {
+  cartCheckMiddleware,
+  cartUpdateMiddleware,
+} = require("./middlewares/cart.middleware");
 
 const app = express();
 const port = 3000;
@@ -38,6 +42,7 @@ app.use(csurf());
 
 app.use(createCsrfToken);
 app.use(loginCheckMiddleware);
+app.use(cartUpdateMiddleware);
 app.use(cartCheckMiddleware);
 
 app.use((req, res, next) => {
@@ -49,6 +54,7 @@ app.use(publicRouter);
 app.use("/product", productRouter);
 app.use("/cart", cartRouter);
 app.use(protectMiddleware);
+app.use("/order", orderRouter);
 app.use("/admin", adminRouter);
 
 app.use(errorHandler);
