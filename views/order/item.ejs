@@ -1,0 +1,57 @@
+<% let orderTotal=0 %>
+    <section>
+        <div>
+            <ul>
+                <% for(const product of order.products) { %>
+                    <li>
+                        <%= product.title %> ( ₩ <%= new Intl.NumberFormat("default").format(product.price) %> *
+                                <%= product.count %> )
+                    </li>
+                    <% orderTotal +=product.count * +product.price} %>
+            </ul>
+            <% if(locals.isAdmin) { %>
+                <div>
+                    <p>
+                        <%= order.user.name %>
+                    </p>
+                    <%= order.user.address.city %>,
+                        <%= order.user.address.street %>
+                            (<%= order.user.address.postalCode %>)
+                </div>
+                <% } %>
+                    <div>
+                        <span>
+                            ₩ <%= new Intl.NumberFormat("default").format(orderTotal) %>
+                        </span>
+                        <span>
+                            - <%= new Intl.DateTimeFormat("default", { year: "numeric" , month: "numeric" ,
+                                day: "numeric" , weekday: "long" , hour: "numeric" , minute: "numeric" , hour12: false,
+                                }).format(order.time) %>
+
+                        </span>
+                    </div>
+        </div>
+        <% if(locals.isAdmin) { %>
+            <form action="" data-csrf="<%= locals.csrf %>" data-targetId="<%= order._id %>">
+                <select name="status" id="">
+                    <option value="pending" <% if(order.status==="pending" ) { %> selected <%}%>
+                            >
+                            pending
+                    </option>
+                    <option value="fulfilled" <% if(order.status==="fulfilled" ) { %> selected <%}%>
+                            >
+                            fulfilled
+                    </option>
+                    <option value="cancelled" <% if(order.status==="cancelled" ) { %> selected <%}%>
+                            >
+                            cancelled
+                    </option>
+                </select>
+                <button class="btn">SAVE</button>
+            </form>
+            <% } else { %>
+                <p>
+                    <%= order.status %>
+                </p>
+                <% } %>
+    </section>

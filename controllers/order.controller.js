@@ -3,7 +3,7 @@ const Product = require("../models/product.model");
 
 async function order(req, res) {
   const { loginUser } = req.session;
-  const orders = await Order.find(loginUser._id);
+  const orders = await Order.findByUserId(loginUser._id);
 
   const result = await Promise.all(
     orders.map(async function (order) {
@@ -20,6 +20,8 @@ async function order(req, res) {
       return {
         time: order.time,
         products: rr,
+        status: order.status,
+        _id: order._id,
       };
     })
   );

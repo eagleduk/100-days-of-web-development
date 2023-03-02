@@ -1,9 +1,28 @@
-<%- include("../meta/meta", {title: "Your Order" }) %>
+<% if(locals.isAdmin) { %>
+    <%- include("../meta/meta", {title: "Order Management" }) %>
+        <% } else { %>
+            <%- include("../meta/meta", {title: "Your Order" }) %>
+                <% } %>
 
-    </head>
+                    <link rel="stylesheet" href="/static/styles/order.css">
+                    <script src="/static/scripts/order.management.js" defer></script>
+                    </head>
 
-    <body>
-        <%- include("../layouts/header") %>
-            <main>
-            </main>
-            <%- include("../layouts/footer") %>
+                    <body>
+                        <%- include("../layouts/header") %>
+                            <main class="order-main">
+
+                                <% if(locals.isAdmin) { %>
+                                    <h1>
+                                        All Orders
+                                    </h1>
+                                    <% } else { %>
+                                        <h1>
+                                            Your Orders
+                                        </h1>
+                                        <% } %>
+                                            <% for(const order of orders) { %>
+                                                <%- include("item", { order }) %>
+                                                    <% } %>
+                            </main>
+                            <%- include("../layouts/footer") %>

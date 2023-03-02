@@ -1,3 +1,4 @@
+const Order = require("../models/order.model");
 const Product = require("../models/product.model");
 
 async function products(req, res) {
@@ -71,6 +72,43 @@ async function deleteProduct(req, res, next) {
   }
 }
 
+async function order(req, res) {
+  const orders = await Order.findAll();
+
+  const result = await Promise.all(
+    orders.map(async function (order) {
+      const rr = await Promise.all(
+        order.products.map(async function (product) {
+          const { id, count } = product;
+          const p = await Product.findById(id);
+          return {
+            ...p,
+            count,
+          };
+        })
+      );
+      return {
+        ...order,
+        products: rr,
+      };
+    })
+  );
+  return res.render("order/order", { orders: result });
+}
+
+async function updateOrderStatus(req, res, next) {
+  const {
+    params: { id },
+    body: { status },
+  } = req;
+  console.log(id, status);
+  try {
+    await Order.updateStatus(id, status);
+  } catch (err) {
+    next(err);
+  }
+}
+
 module.exports = {
   products: products,
   product: product,
@@ -78,4 +116,6 @@ module.exports = {
   viewProduct: viewProduct,
   updateProduct: updateProduct,
   deleteProduct: deleteProduct,
+  order: order,
+  updateOrderStatus: updateOrderStatus,
 };
