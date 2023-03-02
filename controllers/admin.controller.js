@@ -101,7 +101,6 @@ async function updateOrderStatus(req, res, next) {
     params: { id },
     body: { status },
   } = req;
-  console.log(id, status);
   try {
     await Order.updateStatus(id, status);
   } catch (err) {

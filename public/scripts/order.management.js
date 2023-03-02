@@ -6,7 +6,6 @@ async function orderChangeStatus(event) {
   const {
     dataset: { csrf, targetid },
   } = event.target;
-  console.log(csrf, targetid);
 
   await fetch("/admin/order/" + targetid, {
     method: "PATCH",
