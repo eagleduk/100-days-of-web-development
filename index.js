@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const csurf = require("csurf");
 const expressSession = require("express-session");
