@@ -1,7 +1,6 @@
 const database = require("../database/database");
 
 const randomLanguages = async (req, res, next) => {
-  console.log("ERE");
   const quotes = await database
     .getDB()
     .db("api")

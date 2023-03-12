@@ -26,3 +26,11 @@ Udemy
 622. API 향상 & 더 현실감 있게 만들기
 
      - Database(mongoDB) 에 저장된 languages 랜덤 뽑기
+
+623. 더 복잡한 REST API: 첫번째 단계
+
+     - todo 데이터(CRUD) get, post, patch, delete
+
+624. 첫 번째 API 엔드포이트 완료
+625. Postman으로 API 테스트
+626. PATH & DELETE 경로/엔드포인트 추가
