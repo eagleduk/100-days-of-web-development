@@ -22,3 +22,7 @@ Udemy
 621. 첫 번째 기본 REST API 구축
 
      - 우리가 얻고 사용하는 데이터와 다시 보내는 데이터에 관한 기능
+
+622. API 향상 & 더 현실감 있게 만들기
+
+     - Database(mongoDB) 에 저장된 languages 랜덤 뽑기
