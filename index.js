@@ -11,12 +11,13 @@ app.use(express.json());
 app.use("/languages", languagesRouter);
 app.use("/todos", todoRouter);
 
-app.get("/a", function (req, res) {
+app.get("/", function (req, res) {
   res.json({ result: "Rest API" });
 });
 
 app.use(function (err, req, res, next) {
   console.log(err);
+  res.status(500).send("Server something broke!");
 });
 
 database
