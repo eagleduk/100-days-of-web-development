@@ -45,6 +45,8 @@ Udemy
      - 브라우저에서 다른 사이트가 해당 개발자의 허가없이 다른 개발자의 API 사용을 시작할 수 없도록 보장하기 때문
      - 다른 응답헤더를 설정해야만 변경 가능
 
-     > 1. Access-Control-Allow-Origin: 같은 도메인만 허용
+     > 1. Access-Control-Allow-Origin: 허용하고자 하는 도메인
      > 2. Access-Control-Allow-Methods: [GET],[POST],[PATCH] 등 허용하려는 HTTP 메서드 설정
-     > 3. Access-Control-Allow-Headers: 기본 헤더 외에 백엔드에서 허용하려는 추가 헤더 설정
+     > 3. Access-Control-Allow-Headers: 기본 헤더 외에 백엔드에서 허용하려는 추가 헤더 키
+
+630. CORS 오류 수정 & 프런트엔드 SPA를 REST API에 연결하기
