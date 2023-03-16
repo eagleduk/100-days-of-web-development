@@ -8,19 +8,30 @@ Vue.createApp({
       text: "",
       todos: [],
       id: null,
+      isLoading: false,
     };
   },
+
+  /**
+   *      Vue JS 객체가 생성되고 나서 실행
+   */
+  created() {},
+
   /**
    *      Vue JS 가 마운트 되고 나서 실행
    * @returns
    */
   async mounted() {
     let response;
+    isLoading = true;
+
     try {
       response = await fetch("http://localhost:3000/todos");
     } catch (error) {
       alert("Something went wrong!");
       return;
+    } finally {
+      isLoading = false;
     }
 
     if (!response.ok) {
@@ -31,6 +42,7 @@ Vue.createApp({
     const responseData = await response.json();
     this.todos = responseData.todos;
   },
+
   /**
    *    DOM 이벤트에 사용할 Event 작성
    */

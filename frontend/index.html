@@ -35,7 +35,12 @@
       <ul id="todos-list">
 
         <!--    Vue if 조건문 사용    -->
-        <p v-if="todos.length === 0">검색 결과가 없습니다.</p>
+        <p v-if="todos.length === 0 && !isLoading">검색 결과가 없습니다.</p>
+
+        <!--    Vue else if 조건문 사용 -->
+        <p v-else-if="isLoading">
+          Loading....
+        </p>
 
         <!--    Vue else 조건문 사용    -->
         <!--    Vue 반복문 사용    -->
