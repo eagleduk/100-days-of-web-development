@@ -23,3 +23,9 @@ Udemy
 638. 조건부 콘텐츠 출력
 639. 데이터 업데이트
 640. 데이터 삭제
+641. POST Http 요청 보내기
+642. 데이터 로드 & 로드 상태 관리
+643. Vue를 다르게 로드하기
+644. PATCH + DELETE 요청 & 모듈 요약 보내기
+
+- 퀴즈 26: Learning Check: JavaScript Frameworks & Vue.js
